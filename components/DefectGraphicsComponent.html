@@ -1,0 +1,1192 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DefectGraphicsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/graphics/defect-graphics/defect-graphics.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de la gráfica de <code>concurrencia de defectos</code></p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-defect-graphics</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./defect-graphics.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./defect-graphics.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#absoluteFrequency" >absoluteFrequency</a>
+                            </li>
+                            <li>
+                                <a href="#chart" >chart</a>
+                            </li>
+                            <li>
+                                <a href="#defectsList" >defectsList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#list" >list</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#listOriginal" >listOriginal</a>
+                            </li>
+                            <li>
+                                <a href="#repeatList" >repeatList</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createData" >createData</a>
+                            </li>
+                            <li>
+                                <a href="#createDefectsChart" >createDefectsChart</a>
+                            </li>
+                            <li>
+                                <a href="#filter" >filter</a>
+                            </li>
+                            <li>
+                                <a href="#getDefectsList" >getDefectsList</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fecha1" >fecha1</a>
+                            </li>
+                            <li>
+                                <a href="#fecha2" >fecha2</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#chartVisible" >chartVisible</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(pdService: <a href="../injectables/ProcesoDefectoService.html" target="_self">ProcesoDefectoService</a>, colorService: <a href="../injectables/ColorsService.html" target="_self">ColorsService</a>, filterService: <a href="../injectables/FilterService.html" target="_self">FilterService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>pdService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProcesoDefectoService.html" target="_self" >ProcesoDefectoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>proceso_defecto</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>colorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ColorsService.html" target="_self" >ColorsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de colres aleatorios</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>filterService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FilterService.html" target="_self" >FilterService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>servicio del filtro</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fecha1"></a>
+                        <b>fecha1</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:45</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fecha2"></a>
+                        <b>fecha2</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:46</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartVisible"></a>
+                        <b>chartVisible</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:48</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createData"></a>
+                    <span class="name">
+                        <span ><b>createData</b></span>
+                        <a href="#createData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para generar la información pertinete para la generación del gráfico.
+Si <code>list</code> existe almacena los defectos en <code>defectsList</code> y almacena cuantas veces se repite cada defecto
+en <code>repeatList</code>
+el componente</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Si <code>list</code> existe regresa una vez completadas todas las operaciones para no ocultar
+el componente</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDefectsChart"></a>
+                    <span class="name">
+                        <span ><b>createDefectsChart</b></span>
+                        <a href="#createDefectsChart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createDefectsChart()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para la creación del gráfico correspondiente.
+Se especifica el tipo, y la información correspondiente extraida con el método <code>createData</code> además
+de que se establecen unas configuraciónes del gráfico</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filter"></a>
+                    <span class="name">
+                        <span ><b>filter</b></span>
+                        <a href="#filter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para filtrar los registros por las fechas proporcionadas por el componente padre
+<code>fecha1</code> y <code>fecha2</code>
+la ejecución del método <code>getDefectsList</code> y subscribe a esto el método <code>createData</code> si los parámetros están
+vacíos</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Regresa si no hay registros coincidentes con los parámetros establecidos u retorna
+la ejecución del método <code>getDefectsList</code> y subscribe a esto el método <code>createData</code> si los parámetros están
+vacíos</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDefectsList"></a>
+                    <span class="name">
+                        <span ><b>getDefectsList</b></span>
+                        <a href="#getDefectsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDefectsList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>proceso_defecto</code> ya que es la tabla necesaria para
+generar este gráfica
+el método <code>createData</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Subscripción a los resultados de éeste método para su futura utilización por
+el método <code>createData</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Al inicializar el componente obtiene los registros de <code>proceso_defecto</code> y deja la información de esta
+a disposición del método <code>createData</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="absoluteFrequency"></a>
+                    <span class="name">
+                        <span ><b>absoluteFrequency</b></span>
+                        <a href="#absoluteFrequency"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chart"></a>
+                    <span class="name">
+                        <span ><b>chart</b></span>
+                        <a href="#chart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defectsList"></a>
+                    <span class="name">
+                        <span ><b>defectsList</b></span>
+                        <a href="#defectsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="list"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>list</b></span>
+                        <a href="#list"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ProcesoDefectoModel.html" target="_self" >ProcesoDefectoModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listOriginal"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>listOriginal</b></span>
+                        <a href="#listOriginal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ProcesoDefectoModel.html" target="_self" >ProcesoDefectoModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="repeatList"></a>
+                    <span class="name">
+                        <span ><b>repeatList</b></span>
+                        <a href="#repeatList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/graphics/defect-graphics/defect-graphics.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { Chart, ChartType} from &quot;chart.js/auto&quot;;
+import { ProcesoDefectoModel } from &#x27;../../../models/proceso-defecto.model&#x27;;
+import { ProcesoDefectoService } from &#x27;../../../services/proceso-defecto.service&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { ColorsService } from &#x27;../../../services/colors.service&#x27;;
+import { FilterService } from &#x27;../../../services/filter.service&#x27;;
+
+/**
+ * Componente de la gráfica de &#x60;concurrencia de defectos&#x60;
+ * @implements {OnInit}
+ */
+@Component({
+  selector: &#x27;app-defect-graphics&#x27;,
+  standalone: true,
+  imports: [],
+  templateUrl: &#x27;./defect-graphics.component.html&#x27;,
+  styleUrl: &#x27;./defect-graphics.component.css&#x27;
+})
+export class DefectGraphicsComponent implements OnInit {
+
+  /**
+   * Al inicializar el componente obtiene los registros de &#x60;proceso_defecto&#x60; y deja la información de esta 
+   * a disposición del método &#x60;createData&#x60;
+   * @method
+   */
+  ngOnInit(): void {
+    this.getDefectsList().add(() &#x3D;&gt; {
+      this.createData();
+    });
+  }
+
+  /**
+   * @constructor
+   * @param {ProcesoDefectoService} pdService Servicio de la tabla &#x60;proceso_defecto&#x60;
+   * @param {ColorsService} colorService Servicio de colres aleatorios
+   * @param {FilterService} filterService servicio del filtro
+   */
+  constructor(private pdService: ProcesoDefectoService, private colorService: ColorsService, private filterService: FilterService) {
+    this.filterService.$emitter.subscribe(() &#x3D;&gt; {
+      this.filter();
+    })
+  }
+
+  @Input() fecha1: string &#x3D; &quot;&quot;; // Parámetro enviado desde el padre. Utilizado para el filtrado (inicio)
+  @Input() fecha2: string &#x3D; &quot;&quot;; // Parámetro enviado desde el padre. Utilizado para el filtrado (final)
+
+  @Output() chartVisible &#x3D; new EventEmitter&lt;boolean&gt; // Evento para cambiar la visibilidad del componente
+
+  chart: any; // Declara el gráfico
+  list?: ProcesoDefectoModel[]; // Declara la lista de registros de &#x60;proceso_defecto&#x60; (modificable)
+  listOriginal?: ProcesoDefectoModel[]; // Declara la lista de registros de &#x60;proceso_defecto&#x60;
+
+  defectsList: string[] &#x3D; []; // Declara la lista de los defectos encontrados en &#x60;proceso_defecto&#x60;
+  repeatList: number[] &#x3D; []; // Declara la lista de repeticiones de cada defecto encontrado en &#x60;proceso_Defecto&#x60;
+  absoluteFrequency: number[] &#x3D; []; // Frecuencia absoluta de la repeticiones de los defectos
+
+  /**
+   * Método para obtener todos los registros de &#x60;proceso_defecto&#x60; ya que es la tabla necesaria para 
+   * generar este gráfica
+   * @method
+   * @returns {Subscription} Subscripción a los resultados de éeste método para su futura utilización por
+   * el método &#x60;createData&#x60;
+   */
+  getDefectsList(): Subscription {
+    return this.pdService.getAllPD().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.list &#x3D; data;
+        this.listOriginal &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para generar la información pertinete para la generación del gráfico.
+   * Si &#x60;list&#x60; existe almacena los defectos en &#x60;defectsList&#x60; y almacena cuantas veces se repite cada defecto
+   * en &#x60;repeatList&#x60;
+   * @method
+   * @returns {void} Si &#x60;list&#x60; existe regresa una vez completadas todas las operaciones para no ocultar
+   * el componente
+   */
+  createData(): void {
+    const defectsRepetitions &#x3D; new Map&lt;string, number&gt;();
+
+    if(this.list) {
+      for (const dato of this.list) {
+
+        const codigo &#x3D; dato.codigoDefecto;
+        const insert &#x3D; codigo ? codigo : &quot;&quot;;
+        if (defectsRepetitions.has(insert)) {
+          defectsRepetitions.set(insert, defectsRepetitions.get(insert)! + 1);
+        } else {
+          defectsRepetitions.set(insert, 1);
+        }
+      }
+      //ordenar de forma descendente
+      const array &#x3D; Array.from(defectsRepetitions).sort((a, b) &#x3D;&gt; b[1] - a[1])
+
+      array.forEach((value) &#x3D;&gt; {
+        this.defectsList.push(value[0])
+        this.repeatList.push(value[1])
+      })
+
+      for(let i &#x3D; 0; i &lt; this.repeatList.length; i++) {
+        this.absoluteFrequency.push( i &#x3D;&#x3D;&#x3D; 0 ? this.repeatList[i] : this.absoluteFrequency[i-1] + this.repeatList[i])
+      }
+      this.createDefectsChart();
+      return;
+    }
+    this.chartVisible.emit(false);
+  }
+
+  /**
+   * Método para la creación del gráfico correspondiente.
+   * Se especifica el tipo, y la información correspondiente extraida con el método &#x60;createData&#x60; además
+   * de que se establecen unas configuraciónes del gráfico
+   * @method
+   */
+  createDefectsChart(){
+    this.chart &#x3D; new Chart(&quot;DefectsChart&quot;, {
+      data: {
+        labels: this.defectsList,
+        datasets: [{
+          type: &quot;bar&quot; as ChartType,
+          data: this.repeatList,
+          backgroundColor: this.colorService.getColors(this.repeatList.length)
+        },{
+          label: &quot;Frecuencia absoluta acumulada&quot;,
+          type: &quot;line&quot; as ChartType,
+          data: this.absoluteFrequency,
+          fill: false,
+          backgroundColor: &quot;#9AD0F5&quot;,
+          borderColor: &quot;#36A2EB&quot;
+        }]
+      },
+      options: { 
+        responsive: true,
+        plugins: {
+          title: { display: true, text: &quot;Concurrencia de Defectos&quot;},
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: &quot;Código Defecto&quot; }
+          },
+          y: {
+            ticks: { stepSize: 1 }
+          }
+        },
+        maintainAspectRatio: false
+      }
+    })
+  }
+
+    /**
+   * Método para filtrar los registros por las fechas proporcionadas por el componente padre
+   * &#x60;fecha1&#x60; y &#x60;fecha2&#x60;
+   * @method
+   * @returns {void} Regresa si no hay registros coincidentes con los parámetros establecidos u retorna
+   * la ejecución del método &#x60;getDefectsList&#x60; y subscribe a esto el método &#x60;createData&#x60; si los parámetros están
+   * vacíos
+   */
+  filter() {
+    // Destruye el gráfico actual
+    this.chart.destroy();
+    // vacía las listas de los datos
+    this.repeatList &#x3D; [];
+    this.defectsList &#x3D; [];
+    // Haz visible el componente
+    this.chartVisible.emit(true)
+
+    // Si los parámetros de filtrado están vacíos retorna la ejecución de &#x60;getDefectsList&#x60; subscribiendo a esto a &#x60;createData&#x60; 
+    if(this.fecha1 &#x3D;&#x3D;&#x3D; &quot;&quot; &amp;&amp; this.fecha2 &#x3D;&#x3D;&#x3D; &quot;&quot;) {
+      return this.getDefectsList().add(() &#x3D;&gt; {
+        this.createData();
+      })
+    }
+
+    // Filtra la información según los parámetros
+    const data &#x3D; this.filterService.filterData(this.listOriginal, { fecha1: this.fecha1, fecha2: this.fecha2 })
+    // Si no hay registros que cumplan con los parámetros, oculata el gráfico y regresa
+    if(data.length &#x3D;&#x3D;&#x3D; 0) {
+      this.chartVisible.emit(false);
+      return;
+    }
+    
+    // Si existen registros que cumplan los parámetros asignalos a &#x60;list&#x60; y vuleve a generar la información pertinente
+    this.list &#x3D; data;
+    this.createData();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chart-container&quot;&gt;
+    &lt;canvas id&#x3D;&quot;DefectsChart&quot;&gt;{{chart}}&lt;/canvas&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="chart-container">    <canvas id="DefectsChart">{{chart}}</canvas></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AqlDefectosMayoresComponent', 'selector': 'aql'},{'name': 'AqlFormComponent', 'selector': 'app-aql-form'},{'name': 'AqlGraphicsComponent', 'selector': 'app-aql-graphics'},{'name': 'AuditoriaDelProcesoComponent', 'selector': 'app-proceso'},{'name': 'AuditoriaFormComponent', 'selector': 'app-auditoria-form'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClientesFormComponent', 'selector': 'app-clientes-form'},{'name': 'CustomersGraphicsComponent', 'selector': 'app-customers-graphics'},{'name': 'DefectGraphicsComponent', 'selector': 'app-defect-graphics'},{'name': 'DefectosComponent', 'selector': 'app-defectos'},{'name': 'DefectosFormComponent', 'selector': 'app-defectos-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormatoAuditoriaComponent', 'selector': 'app-formato-auditoria'},{'name': 'GraficasComponent', 'selector': 'app-graficas'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemsComponent', 'selector': 'app-items'},{'name': 'ItemsDefectsGraphicsComponent', 'selector': 'app-items-defects-graphics'},{'name': 'ItemsFormComponent', 'selector': 'app-items-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NoDataComponent', 'selector': 'app-no-data'},{'name': 'NoPageComponent', 'selector': 'app-no-page'},{'name': 'OrderItemsGraphicsComponent', 'selector': 'app-order-items-graphics'},{'name': 'PedidosComponent', 'selector': 'app-pedidos'},{'name': 'PedidosFormComponent', 'selector': 'app-pedidos-form'},{'name': 'ProcesosFormComponent', 'selector': 'app-procesos-form'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TablasComponent', 'selector': 'app-tablas'},{'name': 'TecnologiasComponent', 'selector': 'app-tecnologias'},{'name': 'TecnologiasFormComponent', 'selector': 'app-tecnologias-form'},{'name': 'UserGraphicsComponent', 'selector': 'app-user-graphics'},{'name': 'UserTimeComponent', 'selector': 'app-user-time'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosFormComponent', 'selector': 'app-usuarios-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DefectGraphicsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DefectGraphicsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

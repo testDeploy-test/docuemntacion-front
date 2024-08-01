@@ -1,0 +1,3145 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProcesosFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/forms/procesos-form/procesos-form.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Compoente del formulario de <code>auditoria_del_proceso</code></p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-procesos-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                            <code>NgIconComponent</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./procesos-form.component.html</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">viewProviders</td>
+                <td class="col-md-9">
+                    <code>
+                            <code>provideIcons({ heroXMark })</code>
+                    </code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./procesos-form.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#auditsList" >auditsList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#deffectsList" >deffectsList</a>
+                            </li>
+                            <li>
+                                <a href="#deffectsRemoved" >deffectsRemoved</a>
+                            </li>
+                            <li>
+                                <a href="#duplicated" >duplicated</a>
+                            </li>
+                            <li>
+                                <a href="#maxLenghtPDArray" >maxLenghtPDArray</a>
+                            </li>
+                            <li>
+                                <a href="#pdForm" >pdForm</a>
+                            </li>
+                            <li>
+                                <a href="#pdFormArray" >pdFormArray</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#pdList" >pdList</a>
+                            </li>
+                            <li>
+                                <a href="#processForm" >processForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#processList" >processList</a>
+                            </li>
+                            <li>
+                                <a href="#selectedFile" >selectedFile</a>
+                            </li>
+                            <li>
+                                <a href="#selectedPD" >selectedPD</a>
+                            </li>
+                            <li>
+                                <a href="#validAudit" >validAudit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addPD" >addPD</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#close" >close</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                <a href="#createDinamicForm" >createDinamicForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#createPD" >createPD</a>
+                            </li>
+                            <li>
+                                <a href="#deletePD" >deletePD</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAudits" >getAudits</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDeffects" >getDeffects</a>
+                            </li>
+                            <li>
+                                <a href="#getInfo" >getInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPD" >getPD</a>
+                            </li>
+                            <li>
+                                <a href="#getProcess" >getProcess</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hasDuplicated" >hasDuplicated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hidden" >hidden</a>
+                            </li>
+                            <li>
+                                <a href="#maxLenght" >maxLenght</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFileSelected" >onFileSelected</a>
+                            </li>
+                            <li>
+                                <a href="#showFormCreate" >showFormCreate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showFormUpdate" >showFormUpdate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updatePD" >updatePD</a>
+                            </li>
+                            <li>
+                                <a href="#validateAudit" >validateAudit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#action" >action</a>
+                            </li>
+                            <li>
+                                <a href="#selectedProcess" >selectedProcess</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#enabledTable" >enabledTable</a>
+                            </li>
+                            <li>
+                                <a href="#getAll" >getAll</a>
+                            </li>
+                            <li>
+                                <a href="#getDP" >getDP</a>
+                            </li>
+                            <li>
+                                <a href="#hiddenForm" >hiddenForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#formArray" >formArray</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(processService: <a href="../injectables/AuditoriaDelProcesoService.html" target="_self">AuditoriaDelProcesoService</a>, pdService: <a href="../injectables/ProcesoDefectoService.html" target="_self">ProcesoDefectoService</a>, alertsService: <a href="../injectables/AlertsService.html" target="_self">AlertsService</a>, fb: FormBuilder, deffectsService: <a href="../injectables/DefectosService.html" target="_self">DefectosService</a>, auditsService: <a href="../injectables/FormatoAuditoriaService.html" target="_self">FormatoAuditoriaService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>processService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuditoriaDelProcesoService.html" target="_self" >AuditoriaDelProcesoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>auditoria_del_proceso</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>pdService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProcesoDefectoService.html" target="_self" >ProcesoDefectoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>proceso_defecto</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>alertsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertsService.html" target="_self" >AlertsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de alertas</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para crear el formulario</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>deffectsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DefectosService.html" target="_self" >DefectosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>defectos</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>auditsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FormatoAuditoriaService.html" target="_self" >FormatoAuditoriaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servico de la tabla <code>formato_auditoria</code></p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="action"></a>
+                        <b>action</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:60</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedProcess"></a>
+                        <b>selectedProcess</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:59</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enabledTable"></a>
+                        <b>enabledTable</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:65</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAll"></a>
+                        <b>getAll</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:62</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDP"></a>
+                        <b>getDP</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:63</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hiddenForm"></a>
+                        <b>hiddenForm</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:64</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPD"></a>
+                    <span class="name">
+                        <span ><b>addPD</b></span>
+                        <a href="#addPD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPD()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para agregar un elemento <code>pdForm</code> al formulario array. Los campos son asignados
+en función de la acción del formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>close()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="604"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:604</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para cerrar el formulario detectando cambios en la información inicial tanto para la creación
+de un nuevo registro o la actualización de un registro. En caso de detectar cambios pide una confirmación
+antes de cerrar el formulario en caso de confirmar llama al método <code>hidden</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna si se cumplen ciertas condiciones para no ejecutar el resto de la lógica</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="399"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:399</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para crear un nuevo registro de <code>pedidos</code> en base a la información recabada en el formulario convertido a <code>FormData</code>.
+Si es éxitosa llama al método <code>createPD</code>, muestra una alerta de éxito, llama a los métodos <code>hidden</code> y <code>getInfo</code>
+y si falla muestra el error en la consola y muestra una alerta de error
+el formulario y retorna</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Si el formulario es inválido envia una alerta para que complete
+el formulario y retorna</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDinamicForm"></a>
+                    <span class="name">
+                        <span ><b>createDinamicForm</b></span>
+                        <a href="#createDinamicForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createDinamicForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="134"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para inicializar el formulario array</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPD"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>createPD</b></span>
+                        <a href="#createPD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPD(IDproceso: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="444"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:444</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para crear nuevos registros de <code>proceso_defecto</code> en base a la información recabada
+en el formulario array. Si es éxitoso muestra en consola un mensaje de éxito y si falla
+muestra un mensaje de error en la consola y lanza una alerta de error</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>IDproceso</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>ID del proceso</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePD"></a>
+                    <span class="name">
+                        <span ><b>deletePD</b></span>
+                        <a href="#deletePD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletePD(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para eliminar un elemento del formulario array</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>index del elemento a eliminar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna si el index es inválido</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAudits"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getAudits</b></span>
+                        <a href="#getAudits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAudits()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="290"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>formato_auditoria</code> y si es éxitosa asignar la respuesta
+a <code>auditsList</code> y si falla mostrar el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDeffects"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getDeffects</b></span>
+                        <a href="#getDeffects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDeffects()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="276"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:276</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>defectos</code> y si es éxitosa asignar la respuesta
+a <code>deffectsList</code> y si falla mostrar el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfo"></a>
+                    <span class="name">
+                        <span ><b>getInfo</b></span>
+                        <a href="#getInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="691"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:691</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener la información necesaria para el componente pedidos
+mediante la emisión de lo eventos <code>getAll</code> y <code>getPD</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPD"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getPD</b></span>
+                        <a href="#getPD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPD()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="246"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:246</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>proceso_defecto</code> y si es éxitosa asignar la respuesta
+a <code>pdList</code> y si falla mostrar el error en la consola
+futura utilización en alguno de los métodos de visualización de formularios</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Suscripción de la infromación recabada en este método para su 
+futura utilización en alguno de los métodos de visualización de formularios</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProcess"></a>
+                    <span class="name">
+                        <span ><b>getProcess</b></span>
+                        <a href="#getProcess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProcess()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="262"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:262</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>auditoria_del_proceso</code> y si es éxitosa asignar la respuesta
+a <code>processList</code> y si falla mostrar el error en la consola
+futura utilización en alguno de los métodos de visualización de formularios</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Suscripción de la infromación recabada en este método para su 
+futura utilización en alguno de los métodos de visualización de formularios</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasDuplicated"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>hasDuplicated</b></span>
+                        <a href="#hasDuplicated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hasDuplicated(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="223"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:223</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que verifica si hay elementos en el formulario array con el mismo <code>codigoDefecto</code></p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hidden"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>hidden</b></span>
+                        <a href="#hidden"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hidden()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="701"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:701</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para ocultar el formulario y habilitar los botones de las acciónes en el componente padre
+emitiendo los eventos <code>hiddenForm</code> y <code>enabledTable</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maxLenght"></a>
+                    <span class="name">
+                        <span ><b>maxLenght</b></span>
+                        <a href="#maxLenght"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>maxLenght(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="208"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:208</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para mantener la cantidad máxima definida en el formulario array.
+Si los elementos son mas de los permitido elimina los sobrantes</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Input de <code>defectos_encontrados</code></p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Al inicializar el componente crea el formulario dinámico, obten la información de
+<code>auditoria_del_proceso</code> y <code>proceso_defecto</code> y suscribe el resultado de estas a la vusalización del
+formulario según la acción especificada en el padre, además obtén los registros de
+<code>defectos</code> y <code>formato_auditoria</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFileSelected"></a>
+                    <span class="name">
+                        <span ><b>onFileSelected</b></span>
+                        <a href="#onFileSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFileSelected(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="304"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:304</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para asignar el valor del campo file a <code>processForm</code></p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Input imagen</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showFormCreate"></a>
+                    <span class="name">
+                        <span ><b>showFormCreate</b></span>
+                        <a href="#showFormCreate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showFormCreate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="328"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:328</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que vacía los campos del formulariocuando se visualiza para crear un nuevo registro</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showFormUpdate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>showFormUpdate</b></span>
+                        <a href="#showFormUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showFormUpdate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="353"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:353</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para establecer el valor del registro a actualizar en los campos correspondientes de los formularios</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="469"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:469</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para actualizar un registro de <code>auditoria_del_proceso</code> en base a <code>IDproceso</code> del registro seleccionado
+y en la nueva información proporcionada en el formulario.
+Pide confirmación de la acción. En caso de confirmar y que la acción sea éxitosa llama al método <code>updatePD</code>,
+ muestra una alerta de éxito, llamada a los métodos <code>hidden</code> y <code>getInfo</code> y si falla muestra el error en la
+consola y lanza una alerta de error</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePD"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>updatePD</b></span>
+                        <a href="#updatePD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePD()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="519"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:519</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para actualizar registros de <code>proceso_defecto</code> en base a <code>IDproceso_defecto</code>.
+Si en la actualización del proceso se agregaron más defectos, crea los faltantes.
+Si en la actualización del proceso Se cambiaron los registros existentes actualizalos uno por uno con la nueva información.
+Si en la actualización del proceso se eliminaron registros eliminalos uno por uno</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Regresa si los registros de <code>proceso_defecto</code> y el formulario array son iguales</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateAudit"></a>
+                    <span class="name">
+                        <span ><b>validateAudit</b></span>
+                        <a href="#validateAudit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validateAudit(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="316"
+                                    class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:316</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para validar que la auditoria ingresa exista</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Input de IDauditoria</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auditsList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>auditsList</b></span>
+                        <a href="#auditsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/FormatoAuditoriaModel.html" target="_self" >FormatoAuditoriaModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deffectsList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>deffectsList</b></span>
+                        <a href="#deffectsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/DefectosModel.html" target="_self" >DefectosModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deffectsRemoved"></a>
+                    <span class="name">
+                        <span ><b>deffectsRemoved</b></span>
+                        <a href="#deffectsRemoved"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="duplicated"></a>
+                    <span class="name">
+                        <span ><b>duplicated</b></span>
+                        <a href="#duplicated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maxLenghtPDArray"></a>
+                    <span class="name">
+                        <span ><b>maxLenghtPDArray</b></span>
+                        <a href="#maxLenghtPDArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pdForm"></a>
+                    <span class="name">
+                        <span ><b>pdForm</b></span>
+                        <a href="#pdForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pdFormArray"></a>
+                    <span class="name">
+                        <span ><b>pdFormArray</b></span>
+                        <a href="#pdFormArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pdList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>pdList</b></span>
+                        <a href="#pdList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ProcesoDefectoModel.html" target="_self" >ProcesoDefectoModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processForm"></a>
+                    <span class="name">
+                        <span ><b>processForm</b></span>
+                        <a href="#processForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>processList</b></span>
+                        <a href="#processList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/AuditoriaDelProcesoModel.html" target="_self" >AuditoriaDelProcesoModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedFile"></a>
+                    <span class="name">
+                        <span ><b>selectedFile</b></span>
+                        <a href="#selectedFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>File | any</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedPD"></a>
+                    <span class="name">
+                        <span ><b>selectedPD</b></span>
+                        <a href="#selectedPD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validAudit"></a>
+                    <span class="name">
+                        <span ><b>validAudit</b></span>
+                        <a href="#validAudit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formArray"></a>
+                        <span class="name"><b>formArray</b><a href="#formArray"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>formArray()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/app/components/forms/procesos-form/procesos-form.component.ts:141</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Facilita la obtención de la información del formulario array</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>FormArray</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, Output, EventEmitter, OnInit } from &#x27;@angular/core&#x27;;
+import { AuditoriaDelProcesoModel } from &#x27;../../../models/auditoria-del-proceso.model&#x27;;
+import { AuditoriaDelProcesoService } from &#x27;../../../services/auditoria-del-proceso.service&#x27;;
+import { ProcesoDefectoModel } from &#x27;../../../models/proceso-defecto.model&#x27;;
+import { ProcesoDefectoService } from &#x27;../../../services/proceso-defecto.service&#x27;;
+import { FormArray, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { FormBuilder, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
+import { provideIcons, NgIconComponent } from &#x27;@ng-icons/core&#x27;;
+import { heroXMark } from &#x27;@ng-icons/heroicons/outline&#x27;;
+import { AlertsService } from &#x27;../../../services/alerts.service&#x27;;
+import { DefectosModel } from &#x27;../../../models/defectos.model&#x27;;
+import { DefectosService } from &#x27;../../../services/defectos.service&#x27;;
+import { FormatoAuditoriaModel } from &#x27;../../../models/formato-auditoria.model&#x27;;
+import { FormatoAuditoriaService } from &#x27;../../../services/formato-auditoria.service&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+
+/**
+ * Compoente del formulario de &#x60;auditoria_del_proceso&#x60;
+ * @implements {OnInit}
+ */
+@Component({
+  selector: &#x27;app-procesos-form&#x27;,
+  standalone: true,
+  imports: [ReactiveFormsModule, NgIconComponent],
+  viewProviders: [provideIcons({heroXMark})],
+  templateUrl: &#x27;./procesos-form.component.html&#x27;,
+  styleUrl: &#x27;./procesos-form.component.css&#x27;
+})
+export class ProcesosFormComponent implements OnInit {
+
+  /**
+   * Al inicializar el componente crea el formulario dinámico, obten la información de
+   * &#x60;auditoria_del_proceso&#x60; y &#x60;proceso_defecto&#x60; y suscribe el resultado de estas a la vusalización del 
+   * formulario según la acción especificada en el padre, además obtén los registros de 
+   * &#x60;defectos&#x60; y &#x60;formato_auditoria&#x60;
+   * @method
+   */
+  ngOnInit(): void {
+    this.createDinamicForm();
+    this.getProcess().add(() &#x3D;&gt; {
+      if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot;) {
+        this.showFormUpdate();
+      } else {
+        this.showFormCreate();
+      }
+    });
+    this.getPD().add(() &#x3D;&gt; {
+      if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot;) {
+        this.showFormUpdate();
+      } else {
+        this.showFormCreate();
+      }
+    });
+    this.getDeffects();
+    this.getAudits();
+    
+  }
+
+  @Input() selectedProcess: any; // Recibe la información del registro a actualizar
+  @Input() action: string &#x3D; &quot;&quot;; // Recibe la acción del formulario
+
+  @Output() getAll &#x3D; new EventEmitter&lt;void&gt; // Evento para activar el método &#x60;getAll&#x60; del padre
+  @Output() getDP &#x3D; new EventEmitter&lt;void&gt; // Evento para activar el método &#x60;getPD&#x60; del padre
+  @Output() hiddenForm &#x3D; new EventEmitter&lt;boolean&gt; // Evento para cambiar la visibilidad del formulario en el padre
+  @Output() enabledTable &#x3D; new EventEmitter&lt;void&gt; // Evento para activar el método &#x60;enabled&#x60; del padre
+
+  selectedPD: any; // Declara la información de &#x60;proceso_defecto&#x60; cuand se quiera actualizar un registro de &#x60;auditoria_del_proceso&#x60;
+
+  processList?: AuditoriaDelProcesoModel[]; // Declara la lista de registros de &#x60;auditoria_del_proceso&#x60;
+  pdList?: ProcesoDefectoModel[]; // Declara la lista de registros de &#x60;proceso_defecto&#x60;
+  deffectsList?: DefectosModel[]; // Declara la lista de registros de &#x60;defectos&#x60;
+  auditsList?: FormatoAuditoriaModel[]; // Declara la lista de registros de &#x60;formato_auditoria&#x60;
+
+  deffectsRemoved: any[] &#x3D; []; // Delclara la lista de defectos removidos el formulario array
+
+  processForm: FormGroup; // Declara el formulario principal
+  pdForm: any; // Declara el formulario secundario
+  pdFormArray: FormGroup // Declara el formulario array
+
+  selectedFile: File | any; // Declara la imagen
+
+  maxLenghtPDArray: number &#x3D; 0; // Cantidad máxima de elemtos que puede tener el formulario array
+  duplicated: boolean &#x3D; false; // Para verificar si hay defectos repetidos en el proceso
+
+  validAudit: boolean &#x3D; true; // Para validar que la auditoria ingresada exista
+
+  /**
+   * @constructor
+   * @param {AuditoriaDelProcesoService} processService Servicio de la tabla &#x60;auditoria_del_proceso&#x60;
+   * @param {ProcesoDefectoService} pdService Servicio de la tabla &#x60;proceso_defecto&#x60;
+   * @param {AlertsService} alertsService Servicio de alertas
+   * @param {FormBuilder} fb Servicio para crear el formulario
+   * @param {DefectosService} deffectsService Servicio de la tabla &#x60;defectos&#x60;
+   * @param {FormatoAuditoriaService} auditsService Servico de la tabla &#x60;formato_auditoria&#x60;
+   */
+  constructor(
+    private processService: AuditoriaDelProcesoService,
+    private pdService: ProcesoDefectoService,
+    private alertsService: AlertsService,
+    private fb: FormBuilder,
+    private deffectsService: DefectosService,
+    private auditsService: FormatoAuditoriaService
+  ) {
+    // define los campos del formulario principal
+    this.processForm &#x3D; this.fb.group({
+      pnc: [&quot;&quot;, Validators.required],
+      fecha_apertura: [&quot;&quot;, Validators.required],
+      cantidad_rechazada: [null],
+      defectos_encontrados: [&quot;&quot;, Validators.required],
+      operario: [&quot;&quot;, Validators.required],
+      accion: [&quot;&quot;, Validators.required],
+      aprobado_por: [&quot;&quot;],
+      comentario_accion: [&quot;&quot;],
+      cantidad_descarte: [null],
+      cantidad_aceptada: [null],
+      observacion: [&quot;&quot;],
+      fecha_cierre: [&quot;&quot;, Validators.required],
+      re_auditoria: [&quot;&quot;],
+      estado_re_auditoria: [&quot;&quot;],
+      IDauditoria: [null, Validators.required],
+      file: [null]
+    });
+    
+    // Define los campos del formulario array
+    this.pdFormArray &#x3D; this.fb.group({
+      data: this.fb.array([])
+    })
+  }
+
+  /**
+   * Método para inicializar el formulario array
+   * @method
+   */
+  createDinamicForm(): void {
+    this.pdFormArray;
+  }
+
+  /**
+   * Facilita la obtención de la información del formulario array
+   */
+  get formArray(): FormArray {
+    return this.pdFormArray.get(&quot;data&quot;) as FormArray
+  }
+
+
+
+  /**
+   * Método para agregar un elemento &#x60;pdForm&#x60; al formulario array. Los campos son asignados
+   * en función de la acción del formulario
+   * @method
+   */
+  addPD(): void {
+    let procesoId;
+    if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot;) {
+      procesoId &#x3D; this.selectedProcess.IDproceso
+      this.pdForm &#x3D; this.fb.group({
+        IDproceso_defecto: [&quot;&quot;],
+        IDproceso: [procesoId, Validators.required],
+        codigoDefecto: [&quot;&quot;, Validators.required]
+      })
+    } else {
+      if(this.processList) {
+        const last &#x3D; this.processList?.at(-1)?.IDproceso
+        procesoId &#x3D; (last ? last : 0) + 1 
+      }
+      this.pdForm &#x3D; this.fb.group({
+        IDproceso: [procesoId, Validators.required],
+        codigoDefecto: [&quot;&quot;, Validators.required]
+      })
+
+    }
+
+    this.formArray.push(this.pdForm);
+  }
+
+  /**
+   * Método para eliminar un elemento del formulario array
+   * @method
+   * @param {Number} index index del elemento a eliminar
+   * @returns {void} Retorna si el index es inválido
+   */
+  deletePD(index: number): void {
+    if(index &lt; 0 || index &gt; this.formArray.length) {
+      this.alertsService.errorAlert();
+      return;
+    }
+    //no funciona de forma normal, encontre lo siguente para solucionarlo
+    const value &#x3D; this.formArray.value;
+
+    this.formArray.setValue(
+      value.slice(0, index).concat(
+        value.slice(index + 1),
+      ).concat(value[index]),
+    );
+    if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot;) {
+      this.deffectsRemoved.push(this.formArray.at(value.length - 1).value)
+    }
+    this.hasDuplicated(null)
+    this.formArray.removeAt(value.length - 1);
+  }
+
+  /**
+   * Método para mantener la cantidad máxima definida en el formulario array.
+   * Si los elementos son mas de los permitido elimina los sobrantes
+   * @method
+   * @param {any} event Input de &#x60;defectos_encontrados&#x60;
+   */
+  maxLenght(event: any): void {
+    let max &#x3D; event.target.value;
+    if(max &lt; this.maxLenghtPDArray) {
+      while (this.maxLenghtPDArray &gt; max) {
+        this.formArray.removeAt(event.target.value)
+        max++
+      } 
+    }
+    this.maxLenghtPDArray &#x3D; event.target.value;
+  }
+
+  /**
+   * Método que verifica si hay elementos en el formulario array con el mismo &#x60;codigoDefecto&#x60;
+   * @method
+   */
+  public hasDuplicated(event: any): void {
+    let count: number &#x3D; 0;
+    this.duplicated &#x3D; false; 
+    if(event !&#x3D; null) {
+      for (let i &#x3D; 0; i &lt; this.formArray.length; i++) {
+        if (event.target.value &#x3D;&#x3D;&#x3D; this.formArray.at(i).value.codigoDefecto) {
+            count++;
+            if (count &gt;&#x3D; 2) {
+                this.duplicated &#x3D; true;
+            }
+        }
+    }
+    }
+    count &#x3D; 0;
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;proceso_defecto&#x60; y si es éxitosa asignar la respuesta
+   * a &#x60;pdList&#x60; y si falla mostrar el error en la consola
+   * @method
+   * @returns {Subscription} Suscripción de la infromación recabada en este método para su 
+   * futura utilización en alguno de los métodos de visualización de formularios
+   */
+  public getPD(): Subscription {
+    return this.pdService.getAllPD().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.pdList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;auditoria_del_proceso&#x60; y si es éxitosa asignar la respuesta
+   * a &#x60;processList&#x60; y si falla mostrar el error en la consola
+   * @method
+   * @returns {Subscription} Suscripción de la infromación recabada en este método para su 
+   * futura utilización en alguno de los métodos de visualización de formularios
+   */
+  getProcess(): Subscription {
+    return this.processService.getAllProcesses().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.processList &#x3D; data
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;defectos&#x60; y si es éxitosa asignar la respuesta
+   * a &#x60;deffectsList&#x60; y si falla mostrar el error en la consola
+   * @method
+   */
+  public getDeffects(): void {
+    this.deffectsService.getAllDefects().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.deffectsList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;formato_auditoria&#x60; y si es éxitosa asignar la respuesta
+   * a &#x60;auditsList&#x60; y si falla mostrar el error en la consola
+   * @method
+   */
+  public getAudits(): void {
+    this.auditsService.getAllAudits().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.auditsList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para asignar el valor del campo file a &#x60;processForm&#x60;
+   * @method
+   * @param {any} event Input imagen
+   */
+  onFileSelected(event: any): void {
+    this.selectedFile &#x3D; event.target.files[0];
+    this.processForm.patchValue({
+      file: this.selectedFile
+    })
+  }
+
+  /**
+   * Método para validar que la auditoria ingresa exista
+   * @method
+   * @param {any} event Input de IDauditoria
+   */
+  validateAudit(event: any): void {
+    const value &#x3D; event.target.value;
+    this.validAudit &#x3D; true;
+    if(!this.auditsList?.some(audit &#x3D;&gt; audit.IDauditoria &#x3D;&#x3D;&#x3D; parseInt(value))) {
+      this.validAudit &#x3D; false;
+    }
+  }
+
+  /**
+   * Método que vacía los campos del formulariocuando se visualiza para crear un nuevo registro
+   * @method
+   */  
+  showFormCreate(): void {
+    this.processForm.setValue({
+      pnc: null,
+      fecha_apertura: null,
+      cantidad_rechazada: null,
+      defectos_encontrados: null,
+      operario: null,
+      accion: null,
+      aprobado_por: null,
+      comentario_accion: null,
+      cantidad_descarte: null,
+      cantidad_aceptada: null,
+      observacion: null,
+      fecha_cierre: null,
+      re_auditoria: null,
+      estado_re_auditoria: null,
+      IDauditoria: null,
+      file: null
+    })
+  }
+
+  /**
+   * Método para establecer el valor del registro a actualizar en los campos correspondientes de los formularios
+   * @method
+   */  
+  public showFormUpdate(): void {
+    this.maxLenghtPDArray &#x3D; this.selectedProcess.defectos_encontrados;
+    this.processForm.setValue({
+      pnc: this.selectedProcess.pnc,
+      fecha_apertura: this.selectedProcess.fecha_apertura,
+      cantidad_rechazada: this.selectedProcess.cantidad_rechazada,
+      defectos_encontrados: this.selectedProcess.defectos_encontrados,
+      operario: this.selectedProcess.operario,
+      accion: this.selectedProcess.accion,
+      aprobado_por: this.selectedProcess.aprobado_por,
+      comentario_accion: this.selectedProcess.comentario_accion,
+      cantidad_descarte: this.selectedProcess.cantidad_descarte,
+      cantidad_aceptada: this.selectedProcess.cantidad_aceptada,
+      observacion: this.selectedProcess.observacion,
+      fecha_cierre: this.selectedProcess.fecha_cierre,
+      re_auditoria: this.selectedProcess.re_auditoria,
+      estado_re_auditoria: this.selectedProcess.estado_re_auditoria,
+      IDauditoria: this.selectedProcess.formato_auditorium.IDauditoria,
+      file: this.selectedProcess.imagen
+    })
+
+    this.selectedPD &#x3D; this.pdList?.filter(pd &#x3D;&gt; pd.IDproceso &#x3D;&#x3D;&#x3D; this.selectedProcess.IDproceso)
+
+    if(this.selectedPD) {
+      //espera 100ms para intentar evitar registros duplicados
+      setTimeout(() &#x3D;&gt; {
+        for(let i &#x3D; 0; i &lt; this.selectedPD?.length; i++) {
+          this.formArray.push(this.fb.group({
+            IDproceso_defecto: this.selectedPD[i].IDproceso_defecto,
+            IDproceso: this.selectedPD[i].IDproceso,
+            codigoDefecto: this.selectedPD[i].codigoDefecto
+          }))
+        }
+      }, 100)
+    }
+  }
+
+
+  /**
+   * Método para crear un nuevo registro de &#x60;pedidos&#x60; en base a la información recabada en el formulario convertido a &#x60;FormData&#x60;.
+   * Si es éxitosa llama al método &#x60;createPD&#x60;, muestra una alerta de éxito, llama a los métodos &#x60;hidden&#x60; y &#x60;getInfo&#x60;
+   * y si falla muestra el error en la consola y muestra una alerta de error 
+   * @method
+   * @returns {void} Si el formulario es inválido envia una alerta para que complete
+   * el formulario y retorna
+   */  
+  public create(): void {
+    if(this.processForm.invalid) {
+      this.alertsService.completeAlert();
+      return;
+    }
+
+    const formData &#x3D; new FormData();
+    formData.append(&quot;pnc&quot;, this.processForm.get(&quot;pnc&quot;)?.value)
+    formData.append(&quot;fecha_apertura&quot;, this.processForm.get(&quot;fecha_apertura&quot;)?.value)
+    formData.append(&quot;cantidad_rechazada&quot;, this.processForm.get(&quot;cantidad_rechazada&quot;)?.value)
+    formData.append(&quot;defectos_encontrados&quot;, this.processForm.get(&quot;defectos_encontrados&quot;)?.value)
+    formData.append(&quot;operario&quot;, this.processForm.get(&quot;operario&quot;)?.value)
+    formData.append(&quot;accion&quot;, this.processForm.get(&quot;accion&quot;)?.value)
+    formData.append(&quot;aprobado_por&quot;, this.processForm.get(&quot;aprobado_por&quot;)?.value)
+    formData.append(&quot;comentario_accion&quot;, this.processForm.get(&quot;comentario_accion&quot;)?.value)
+    formData.append(&quot;cantidad_descarte&quot;, this.processForm.get(&quot;cantidad_descarte&quot;)?.value)
+    formData.append(&quot;cantidad_aceptada&quot;, this.processForm.get(&quot;cantidad_aceptada&quot;)?.value)
+    formData.append(&quot;observacion&quot;, this.processForm.get(&quot;observacion&quot;)?.value)
+    formData.append(&quot;fecha_cierre&quot;, this.processForm.get(&quot;fecha_cierre&quot;)?.value)
+    formData.append(&quot;re_auditoria&quot;, this.processForm.get(&quot;re_auditoria&quot;)?.value)
+    formData.append(&quot;estado_re_auditoria&quot;, this.processForm.get(&quot;estado_re_auditoria&quot;)?.value)
+    formData.append(&quot;IDauditoria&quot;, this.processForm.get(&quot;IDauditoria&quot;)?.value)
+    formData.append(&quot;file&quot;, this.selectedFile, this.selectedFile.name)
+
+    this.processService.createProcess(formData).subscribe({
+      next: (data) &#x3D;&gt; {
+        this.createPD(data.IDproceso);
+        this.alertsService.succesAlert(&quot;New Process Audit created.&quot;);
+        this.hidden();
+        this.getInfo();
+      },
+      error: (e) &#x3D;&gt; {
+        console.error(e);
+        this.alertsService.errorAlert();
+      }
+    })
+  }
+
+  /**
+   * Método para crear nuevos registros de &#x60;proceso_defecto&#x60; en base a la información recabada 
+   * en el formulario array. Si es éxitoso muestra en consola un mensaje de éxito y si falla
+   * muestra un mensaje de error en la consola y lanza una alerta de error
+   * @method
+   * @param {Number} IDproceso ID del proceso
+   */
+  public createPD(IDproceso: number): void {
+    for(let i &#x3D; 0; i &lt; this.formArray.length; i++) {
+      this.formArray.at(i).patchValue({
+        IDproceso: IDproceso
+      })
+    }
+    this.pdService.createPD(this.formArray.value).subscribe({
+      next: () &#x3D;&gt; {
+        console.log(&quot;new process - deffects created.&quot;)
+      },
+      error: (e) &#x3D;&gt; {
+        console.error(e);
+        this.alertsService.errorAlert();
+      }
+    })
+  }
+
+  /**
+   * Método para actualizar un registro de &#x60;auditoria_del_proceso&#x60; en base a &#x60;IDproceso&#x60; del registro seleccionado
+   * y en la nueva información proporcionada en el formulario.
+   * Pide confirmación de la acción. En caso de confirmar y que la acción sea éxitosa llama al método &#x60;updatePD&#x60;,
+   *  muestra una alerta de éxito, llamada a los métodos &#x60;hidden&#x60; y &#x60;getInfo&#x60; y si falla muestra el error en la 
+   * consola y lanza una alerta de error
+   * @method
+   */
+  public update(): void {
+    this.alertsService.confirmAlert(&quot;You are about to update a record.&quot;, &quot;update&quot;).then((confirmed) &#x3D;&gt; {
+      if(confirmed) {
+        const IDproceso &#x3D; this.selectedProcess.IDproceso;
+
+        const formData &#x3D; new FormData();
+        formData.append(&quot;pnc&quot;, this.processForm.get(&quot;pnc&quot;)?.value)
+        formData.append(&quot;fecha_apertura&quot;, this.processForm.get(&quot;fecha_apertura&quot;)?.value)
+        formData.append(&quot;cantidad_rechazada&quot;, this.processForm.get(&quot;cantidad_rechazada&quot;)?.value)
+        formData.append(&quot;defectos_encontrados&quot;, this.processForm.get(&quot;defectos_encontrados&quot;)?.value)
+        formData.append(&quot;operario&quot;, this.processForm.get(&quot;operario&quot;)?.value)
+        formData.append(&quot;accion&quot;, this.processForm.get(&quot;accion&quot;)?.value)
+        formData.append(&quot;aprobado_por&quot;, this.processForm.get(&quot;aprobado_por&quot;)?.value)
+        formData.append(&quot;comentario_accion&quot;, this.processForm.get(&quot;comentario_accion&quot;)?.value)
+        formData.append(&quot;cantidad_descarte&quot;, this.processForm.get(&quot;cantidad_descarte&quot;)?.value)
+        formData.append(&quot;cantidad_aceptada&quot;, this.processForm.get(&quot;cantidad_aceptada&quot;)?.value)
+        formData.append(&quot;observacion&quot;, this.processForm.get(&quot;observacion&quot;)?.value)
+        formData.append(&quot;fecha_cierre&quot;, this.processForm.get(&quot;fecha_cierre&quot;)?.value)
+        formData.append(&quot;re_auditoria&quot;, this.processForm.get(&quot;re_auditoria&quot;)?.value)
+        formData.append(&quot;estado_re_auditoria&quot;, this.processForm.get(&quot;estado_re_auditoria&quot;)?.value)
+        formData.append(&quot;IDauditoria&quot;, this.processForm.get(&quot;IDauditoria&quot;)?.value)
+        if(this.selectedProcess.imagen !&#x3D;&#x3D; this.processForm.get(&quot;file&quot;)?.value) {
+          formData.append(&quot;file&quot;, this.selectedFile, this.selectedFile.name)
+        }
+
+        this.processService.updateProcess(IDproceso, formData).subscribe({
+          next: () &#x3D;&gt; {
+            this.updatePD();
+            this.alertsService.succesAlert(&#x60;Record ${IDproceso} updated.&#x60;);
+            this.hidden();
+            this.getInfo();
+          },
+          error: (e) &#x3D;&gt; {
+            console.error(e);
+            this.alertsService.errorAlert()
+          }
+        })
+
+      }
+    })
+  }
+
+  /**
+   * Método para actualizar registros de &#x60;proceso_defecto&#x60; en base a &#x60;IDproceso_defecto&#x60;.
+   * Si en la actualización del proceso se agregaron más defectos, crea los faltantes.
+   * Si en la actualización del proceso Se cambiaron los registros existentes actualizalos uno por uno con la nueva información.
+   * Si en la actualización del proceso se eliminaron registros eliminalos uno por uno
+   * @method
+   * @returns {void} Regresa si los registros de &#x60;proceso_defecto&#x60; y el formulario array son iguales
+   */
+  public updatePD(): void {
+    // Si no hay cambios e la información regresa
+    if(JSON.stringify(this.selectedPD) &#x3D;&#x3D;&#x3D; JSON.stringify(this.formArray.value) &amp;&amp; this.selectedProcess.defectos_encontrados &#x3D;&#x3D;&#x3D; this.processForm.get(&quot;defectos_encontrados&quot;)?.value) return;
+    
+    // Si se eliminaron defectos, eliminalos
+    // Elimina todos los defectos eliminados en el formulario debido al cambio de &#x60;defectos_encontrados&#x60;
+    if(this.selectedProcess.defectos_encontrados &gt; this.formArray.length) {
+     const recordDeleted &#x3D; this.selectedPD?.filter((pd: any) &#x3D;&gt; {
+      return !this.formArray.value.some((obj: any) &#x3D;&gt; {
+        return pd.IDproceso_defecto &#x3D;&#x3D;&#x3D; obj.IDproceso_defecto
+      })
+     }).map((obj: any) &#x3D;&gt; obj.IDproceso_defecto)
+
+     for(let i &#x3D; 0; i &lt; recordDeleted.length; i++) {
+      this.pdService.deletePD(recordDeleted[i]).subscribe({
+        next: () &#x3D;&gt; {
+          console.log(&#x60;process - deffects ${recordDeleted[i]} removed.&#x60;);
+        },
+        error: (e) &#x3D;&gt; {
+          console.error(e);
+          this.alertsService.errorAlert()
+        }
+      })
+     }
+    }
+    if(this.deffectsRemoved.length !&#x3D;&#x3D; 0) {
+      for(let i &#x3D; 0; i &lt; this.deffectsRemoved.length; i++) {
+        const IDproceso_defecto &#x3D; this.deffectsRemoved[i].IDproceso_defecto;
+        if(IDproceso_defecto !&#x3D;&#x3D; undefined) {
+          this.pdService.deletePD(IDproceso_defecto).subscribe({
+            next: () &#x3D;&gt; {
+              console.log(&#x60;process - deffects ${IDproceso_defecto} removed.&#x60;);
+            },
+            error: (e) &#x3D;&gt; {
+              console.error(e);
+              this.alertsService.errorAlert()
+            }
+          })
+        }
+      }
+    }
+
+    // Si se agregaron mas defectos crealos
+    if(JSON.stringify(this.selectedPD) !&#x3D;&#x3D; JSON.stringify(this.formArray.value)) {
+      const data &#x3D; this.formArray.value.filter((pd: any) &#x3D;&gt; pd.IDproceso_defecto &#x3D;&#x3D;&#x3D; &quot;&quot;);
+      data.map((obj: any) &#x3D;&gt; {
+        delete obj.IDproceso_defecto;
+        return obj
+      })
+      this.pdService.createPD(data).subscribe({
+        next: () &#x3D;&gt; {
+          console.log(&quot;new records created.&quot;);
+        },
+        error: (e) &#x3D;&gt; {
+          console.error(e);
+          this.alertsService.errorAlert()
+        }
+      })
+    }
+
+    // Si se actualizaron los defectos existentes, actualizalos
+    for(let i &#x3D; 0; i &lt; this.selectedPD.length; i++) {
+      if(JSON.stringify(this.selectedPD[i]) !&#x3D;&#x3D; JSON.stringify(this.formArray.at(i)?.value) &amp;&amp; 
+      this.selectedPD[i].IDproceso_defecto &#x3D;&#x3D;&#x3D; this.formArray.get(&quot;IDproceso_defecto&quot;)?.value) {
+        this.pdService.updatePD(this.selectedPD[i].IDproceso_defecto, this.formArray.at(i)?.value).subscribe({
+          next: () &#x3D;&gt; {
+            console.log(&#x60;Record ${i + 1} updated.&#x60;)
+          },
+          error: (e) &#x3D;&gt; {
+            console.error(e);
+            this.alertsService.errorAlert();
+          }
+        })
+      }
+    }
+
+  }
+
+  /**
+   * Método para cerrar el formulario detectando cambios en la información inicial tanto para la creación
+   * de un nuevo registro o la actualización de un registro. En caso de detectar cambios pide una confirmación 
+   * antes de cerrar el formulario en caso de confirmar llama al método &#x60;hidden&#x60;
+   * @method
+   * @returns Retorna si se cumplen ciertas condiciones para no ejecutar el resto de la lógica
+   */  
+  public close(): void {
+    // Si la acción a realizar es la actualización...
+    if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot;) {
+      // Estructura inicial de la información del registro a actualizar
+      const processPrev &#x3D; this.selectedProcess? {
+        pnc: this.selectedProcess.pnc,
+        fecha_apertura: this.selectedProcess.fecha_apertura,
+        cantidad_rechazada: this.selectedProcess.cantidad_rechazada,
+        defectos_encontrados: this.selectedProcess.defectos_encontrados,
+        operario: this.selectedProcess.operario,
+        accion: this.selectedProcess.accion,
+        aprobado_por: this.selectedProcess.aprobado_por,
+        comentario_accion: this.selectedProcess.comentario_accion,
+        cantidad_descarte: this.selectedProcess.cantidad_descarte,
+        cantidad_aceptada: this.selectedProcess.cantidad_aceptada,
+        observacion: this.selectedProcess.observacion,
+        fecha_cierre: this.selectedProcess.fecha_cierre,
+        re_auditoria: this.selectedProcess.re_auditoria,
+        estado_re_auditoria: this.selectedProcess.estado_re_auditoria,
+        IDauditoria: this.selectedProcess.formato_auditorium.IDauditoria,
+        file: this.selectedProcess.imagen
+      } : null
+
+      // Estructura inicial del formulario array del registro aa actualizar
+      this.selectedPD &#x3D; this.pdList?.filter(pd &#x3D;&gt; pd.IDproceso &#x3D;&#x3D;&#x3D; this.selectedProcess.IDproceso);
+      const pdPrev &#x3D; this.selectedPD?.map((pd: any) &#x3D;&gt; ({
+        IDproceso_defecto: pd.IDproceso_defecto,
+        IDproceso: pd.IDproceso,
+        codigoDefecto: pd.codigoDefecto
+      }));
+
+      // Si los datos previos y actual son iguales llama al método &#x60;hidden&#x60; y regresa
+      if((JSON.stringify(this.processForm.value) &#x3D;&#x3D;&#x3D; JSON.stringify(processPrev)) &amp;&amp; (JSON.stringify(this.formArray.value) &#x3D;&#x3D;&#x3D; JSON.stringify(pdPrev))) {
+        this.hidden();
+        return;
+      }
+      // Si los datos previos y actuales son diferentes pide confirmación para cerrar el formulario
+      this.alertsService.confirmAlert(&quot;The changes will be lost.&quot;, &quot;close&quot;).then((confirmed) &#x3D;&gt; {
+        if(confirmed) {
+          this.hidden();
+          return;
+        }
+      })
+      return;
+    }
+
+    // Si la acción a realizar es la creación...
+    // Estructura inicial de un nuevo registro
+    const newProcess &#x3D; {
+        pnc: null,
+        fecha_apertura: null,
+        cantidad_rechazada: null,
+        defectos_encontrados: null,
+        operario: null,
+        accion: null,
+        aprobado_por: null,
+        comentario_accion: null,
+        cantidad_descarte: null,
+        cantidad_aceptada: null,
+        observacion: null,
+        fecha_cierre: null,
+        re_auditoria: null,
+        estado_re_auditoria: null,
+        IDauditoria: null,
+        file: null
+    }
+
+    // Si los datos previos y actuales son iguales llama al método &#x60;hidden&#x60; y regresa
+    if(JSON.stringify(this.processForm.value) &#x3D;&#x3D;&#x3D; JSON.stringify(newProcess) &amp;&amp; !this.formArray.at(0)) {
+      this.hidden();
+      return;
+    }
+
+    // Si los datos previos y actuales son diferentes pide confirmación para cerrar el formulario
+    this.alertsService.confirmAlert(&quot;The data will be lost.&quot;, &quot;close&quot;).then((confirmed) &#x3D;&gt; {
+      if(confirmed) {
+        this.hidden();
+        return;
+      }
+    })
+  }
+
+  /**
+   * Método para obtener la información necesaria para el componente pedidos
+   * mediante la emisión de lo eventos &#x60;getAll&#x60; y &#x60;getPD&#x60;
+   * @method
+   */
+  getInfo() {
+    this.getAll.emit();
+    this.getDP.emit();
+  }
+
+  /**
+   * Método para ocultar el formulario y habilitar los botones de las acciónes en el componente padre
+   * emitiendo los eventos &#x60;hiddenForm&#x60; y &#x60;enabledTable&#x60;
+   * @method
+   */    
+  public hidden() {
+    this.hiddenForm.emit(false);
+    this.enabledTable.emit();
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;form-container&quot;&gt;
+    &lt;ng-icon class&#x3D;&quot;close-icon&quot; name&#x3D;&quot;heroXMark&quot; (click)&#x3D;&quot;close()&quot;&gt;&lt;/ng-icon&gt;
+    &lt;form [formGroup]&#x3D;&quot;processForm&quot; action&#x3D;&quot;&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;pnc&quot;&gt;PNC&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;pnc&quot; name&#x3D;&quot;pnc&quot; id&#x3D;&quot;pnc&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;fecha_apertura&quot;&gt;Fecha apertura&lt;/label&gt;
+            &lt;input type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;fecha_apertura&quot; name&#x3D;&quot;fecha_apertura&quot; id&#x3D;&quot;fecha_apertura&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;cantidad_rechazada&quot;&gt;Cantidad rechazada&lt;/label&gt;
+            &lt;input type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;cantidad_rechazada&quot; name&#x3D;&quot;cantidad_rechazada&quot; id&#x3D;&quot;cantidad_rechazada&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;defectos_encontrados&quot;&gt;Cantidad de defectos encontrados&lt;/label&gt;
+            &lt;input type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;defectos_encontrados&quot; (change)&#x3D;&quot;maxLenght($event)&quot; name&#x3D;&quot;defectos_encontrados&quot; id&#x3D;&quot;defectos_encontrados&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div [formGroup]&#x3D;&quot;pdFormArray&quot; class&#x3D;&quot;pdForm-container&quot;&gt;
+            &lt;div formArrayName&#x3D;&quot;data&quot;&gt;
+                @for(pd of formArray.controls; track $index) {
+                    &lt;div [formGroupName]&#x3D;&quot;$index&quot; class&#x3D;&quot;deffect-container&quot;&gt;
+                        &lt;div class&#x3D;&quot;deffect&quot;&gt;
+                            &lt;label for&#x3D;&quot;codigoDefecto&quot;&gt;Código defecto&lt;/label&gt;
+                            &lt;select formControlName&#x3D;&quot;codigoDefecto&quot; (change)&#x3D;&quot;hasDuplicated($event)&quot; name&#x3D;&quot;codigoDefecto&quot; id&#x3D;&quot;codigoDefecto&quot;&gt;
+                                @for(deffect of deffectsList; track deffect.codigoDefecto) {
+                                    &lt;option [value]&#x3D;&quot;deffect.codigoDefecto&quot;&gt;{{deffect.codigoDefecto}}&lt;/option&gt;
+                                }
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;ng-icon class&#x3D;&quot;remove-deffect&quot; name&#x3D;&quot;heroXMark&quot; (click)&#x3D;&quot;deletePD($index)&quot;&gt;&lt;/ng-icon&gt;
+                    &lt;/div&gt;
+                }
+            &lt;/div&gt;  
+            @if(duplicated) {
+                &lt;div class&#x3D;&quot;error&quot;&gt;
+                    &lt;span&gt;Defecto duplicado&lt;/span&gt;
+                &lt;/div&gt;
+            }
+            &lt;button  class&#x3D;&quot;addpd&quot; [disabled]&#x3D;&quot;formArray.length &gt;&#x3D; maxLenghtPDArray || duplicated&quot; (click)&#x3D;&quot;addPD()&quot;&gt;Agregar defecto&lt;/button&gt;  
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;operario&quot;&gt;Operario&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;operario&quot; name&#x3D;&quot;operario&quot; id&#x3D;&quot;operario&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;accion&quot;&gt;Acción&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;accion&quot; name&#x3D;&quot;accion&quot; id&#x3D;&quot;accion&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;aprobado_por&quot;&gt;Aprobado por:&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;aprobado_por&quot; name&#x3D;&quot;aprobado_por&quot; id&#x3D;&quot;aprobado_por&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;comentario_accion&quot;&gt;Comentario de la acción&lt;/label&gt;
+            &lt;textarea formControlName&#x3D;&quot;comentario_accion&quot; name&#x3D;&quot;comentario_accion&quot; id&#x3D;&quot;comentario_accion&quot;&gt;&lt;/textarea&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;cantidad_descarte&quot;&gt;Cantidad descarte&lt;/label&gt;
+            &lt;input type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;cantidad_descarte&quot; name&#x3D;&quot;cantidad_descarte&quot; id&#x3D;&quot;cantidad_descarte&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;cantidad_aceptada&quot;&gt;Cantidad aceptada&lt;/label&gt;
+            &lt;input type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;cantidad_aceptada&quot; name&#x3D;&quot;cantidad_aceptada&quot; id&#x3D;&quot;cantidad_aceptada&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;observacion&quot;&gt;Observación&lt;/label&gt;
+            &lt;textarea formControlName&#x3D;&quot;observacion&quot; name&#x3D;&quot;observacion&quot; id&#x3D;&quot;observacion&quot;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;fecha_cierre&quot;&gt;Fecha cierre&lt;/label&gt;
+            &lt;input type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;fecha_cierre&quot; name&#x3D;&quot;fecha_cierre&quot; id&#x3D;&quot;fecha_cierre&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;re_auditoria&quot;&gt;Re auditoria&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;re_auditoria&quot; name&#x3D;&quot;re_auditoria&quot; id&#x3D;&quot;re_auditoria&quot;&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;estado_re_auditoria&quot;&gt;Estado Re-auditoria&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;estado_re_auditoria&quot; name&#x3D;&quot;estado_re_auditoria&quot; id&#x3D;&quot;estado_re_auditoria&quot;&gt;    
+        &lt;/div&gt;
+        &lt;!--&lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;IDauditoria&quot;&gt;Auditoria&lt;/label&gt;
+              &lt;select formControlName&#x3D;&quot;IDauditoria&quot; name&#x3D;&quot;IDauditoria&quot; id&#x3D;&quot;IDauditoria&quot;&gt;
+                @for(audit of auditsList; track audit.IDauditoria) {
+                    &lt;option [value]&#x3D;&quot;audit.IDauditoria&quot;&gt;{{audit.PO !&#x3D;&#x3D; &quot;NA&quot; ? audit.PO : audit.IDauditoria}}&lt;/option&gt;
+                }
+              &lt;/select&gt;
+        &lt;/div&gt;--&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;prueba&quot;&gt;Auditoria&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;IDauditoria&quot; placeholder&#x3D;&quot;Ingrese el ID de la auditoría&quot; (change)&#x3D;&quot;validateAudit($event)&quot; &gt;    
+        &lt;/div&gt;
+        @if(!validAudit) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;
+                &lt;span&gt;Auditoria invalida&lt;/span&gt;
+            &lt;/div&gt;
+        }
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;file&quot;&gt;Imagen&lt;/label&gt;
+            &lt;input type&#x3D;&quot;file&quot; (change)&#x3D;&quot;onFileSelected($event)&quot; name&#x3D;&quot;file&quot; id&#x3D;&quot;file&quot;&gt;
+        &lt;/div&gt;
+        @if(action &#x3D;&#x3D;&#x3D; &quot;create&quot;) {
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;button  class&#x3D;&quot;button-form create-button&quot; (click)&#x3D;&quot;create()&quot; [disabled]&#x3D;&quot;duplicated || !validAudit&quot;&gt;Crear&lt;/button&gt;
+            &lt;/div&gt;
+        } @else {
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;button  class&#x3D;&quot;button-form update-button&quot; (click)&#x3D;&quot;update()&quot; [disabled]&#x3D;&quot;duplicated || !validAudit&quot;&gt;Guardar&lt;/button&gt;
+            &lt;/div&gt;
+        }
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="form-container">    <ng-icon class="close-icon" name="heroXMark" (click)="close()"></ng-icon>    <form [formGroup]="processForm" action="">        <div class="form-group">            <label for="pnc">PNC</label>            <input type="text" formControlName="pnc" name="pnc" id="pnc">            </div>        <div class="form-group">            <label for="fecha_apertura">Fecha apertura</label>            <input type="date" formControlName="fecha_apertura" name="fecha_apertura" id="fecha_apertura">            </div>        <div class="form-group">            <label for="cantidad_rechazada">Cantidad rechazada</label>            <input type="number" formControlName="cantidad_rechazada" name="cantidad_rechazada" id="cantidad_rechazada">            </div>        <div class="form-group">            <label for="defectos_encontrados">Cantidad de defectos encontrados</label>            <input type="number" formControlName="defectos_encontrados" (change)="maxLenght($event)" name="defectos_encontrados" id="defectos_encontrados">            </div>        <div [formGroup]="pdFormArray" class="pdForm-container">            <div formArrayName="data">                @for(pd of formArray.controls; track $index) {                    <div [formGroupName]="$index" class="deffect-container">                        <div class="deffect">                            <label for="codigoDefecto">Código defecto</label>                            <select formControlName="codigoDefecto" (change)="hasDuplicated($event)" name="codigoDefecto" id="codigoDefecto">                                @for(deffect of deffectsList; track deffect.codigoDefecto) {                                    <option [value]="deffect.codigoDefecto">{{deffect.codigoDefecto}}</option>                                }                            </select>                        </div>                        <ng-icon class="remove-deffect" name="heroXMark" (click)="deletePD($index)"></ng-icon>                    </div>                }            </div>              @if(duplicated) {                <div class="error">                    <span>Defecto duplicado</span>                </div>            }            <button  class="addpd" [disabled]="formArray.length >= maxLenghtPDArray || duplicated" (click)="addPD()">Agregar defecto</button>          </div>        <div class="form-group">            <label for="operario">Operario</label>            <input type="text" formControlName="operario" name="operario" id="operario">            </div>        <div class="form-group">            <label for="accion">Acción</label>            <input type="text" formControlName="accion" name="accion" id="accion">            </div>        <div class="form-group">            <label for="aprobado_por">Aprobado por:</label>            <input type="text" formControlName="aprobado_por" name="aprobado_por" id="aprobado_por">            </div>        <div class="form-group">            <label for="comentario_accion">Comentario de la acción</label>            <textarea formControlName="comentario_accion" name="comentario_accion" id="comentario_accion"></textarea>            </div>        <div class="form-group">            <label for="cantidad_descarte">Cantidad descarte</label>            <input type="number" formControlName="cantidad_descarte" name="cantidad_descarte" id="cantidad_descarte">            </div>        <div class="form-group">            <label for="cantidad_aceptada">Cantidad aceptada</label>            <input type="number" formControlName="cantidad_aceptada" name="cantidad_aceptada" id="cantidad_aceptada">            </div>        <div class="form-group">            <label for="observacion">Observación</label>            <textarea formControlName="observacion" name="observacion" id="observacion"></textarea>        </div>        <div class="form-group">            <label for="fecha_cierre">Fecha cierre</label>            <input type="date" formControlName="fecha_cierre" name="fecha_cierre" id="fecha_cierre">            </div>        <div class="form-group">            <label for="re_auditoria">Re auditoria</label>            <input type="text" formControlName="re_auditoria" name="re_auditoria" id="re_auditoria">            </div>        <div class="form-group">            <label for="estado_re_auditoria">Estado Re-auditoria</label>            <input type="text" formControlName="estado_re_auditoria" name="estado_re_auditoria" id="estado_re_auditoria">            </div>        <!--<div class="form-group">            <label for="IDauditoria">Auditoria</label>              <select formControlName="IDauditoria" name="IDauditoria" id="IDauditoria">                @for(audit of auditsList; track audit.IDauditoria) {                    <option [value]="audit.IDauditoria">{{audit.PO !== "NA" ? audit.PO : audit.IDauditoria}}</option>                }              </select>        </div>-->        <div class="form-group">            <label for="prueba">Auditoria</label>            <input type="text" formControlName="IDauditoria" placeholder="Ingrese el ID de la auditoría" (change)="validateAudit($event)" >            </div>        @if(!validAudit) {            <div class="error">                <span>Auditoria invalida</span>            </div>        }        <div class="form-group">            <label for="file">Imagen</label>            <input type="file" (change)="onFileSelected($event)" name="file" id="file">        </div>        @if(action === "create") {            <div class="form-group">                <button  class="button-form create-button" (click)="create()" [disabled]="duplicated || !validAudit">Crear</button>            </div>        } @else {            <div class="form-group">                <button  class="button-form update-button" (click)="update()" [disabled]="duplicated || !validAudit">Guardar</button>            </div>        }    </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AqlDefectosMayoresComponent', 'selector': 'aql'},{'name': 'AqlFormComponent', 'selector': 'app-aql-form'},{'name': 'AqlGraphicsComponent', 'selector': 'app-aql-graphics'},{'name': 'AuditoriaDelProcesoComponent', 'selector': 'app-proceso'},{'name': 'AuditoriaFormComponent', 'selector': 'app-auditoria-form'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClientesFormComponent', 'selector': 'app-clientes-form'},{'name': 'CustomersGraphicsComponent', 'selector': 'app-customers-graphics'},{'name': 'DefectGraphicsComponent', 'selector': 'app-defect-graphics'},{'name': 'DefectosComponent', 'selector': 'app-defectos'},{'name': 'DefectosFormComponent', 'selector': 'app-defectos-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormatoAuditoriaComponent', 'selector': 'app-formato-auditoria'},{'name': 'GraficasComponent', 'selector': 'app-graficas'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemsComponent', 'selector': 'app-items'},{'name': 'ItemsDefectsGraphicsComponent', 'selector': 'app-items-defects-graphics'},{'name': 'ItemsFormComponent', 'selector': 'app-items-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NoDataComponent', 'selector': 'app-no-data'},{'name': 'NoPageComponent', 'selector': 'app-no-page'},{'name': 'OrderItemsGraphicsComponent', 'selector': 'app-order-items-graphics'},{'name': 'PedidosComponent', 'selector': 'app-pedidos'},{'name': 'PedidosFormComponent', 'selector': 'app-pedidos-form'},{'name': 'ProcesosFormComponent', 'selector': 'app-procesos-form'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TablasComponent', 'selector': 'app-tablas'},{'name': 'TecnologiasComponent', 'selector': 'app-tecnologias'},{'name': 'TecnologiasFormComponent', 'selector': 'app-tecnologias-form'},{'name': 'UserGraphicsComponent', 'selector': 'app-user-graphics'},{'name': 'UserTimeComponent', 'selector': 'app-user-time'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosFormComponent', 'selector': 'app-usuarios-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProcesosFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProcesosFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

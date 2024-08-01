@@ -1,0 +1,1253 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  UserTimeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/graphics/users/user-time/user-time.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de la gráfica <code>Tiempo dedicado a las auditorias</code></p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-user-time</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./user-time.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./user-time.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#averageTime" >averageTime</a>
+                            </li>
+                            <li>
+                                <a href="#chart" >chart</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#list" >list</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#listOriginal" >listOriginal</a>
+                            </li>
+                            <li>
+                                <a href="#timeSummationList" >timeSummationList</a>
+                            </li>
+                            <li>
+                                <a href="#userList" >userList</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createUserTimeChart" >createUserTimeChart</a>
+                            </li>
+                            <li>
+                                <a href="#createUserTimeData" >createUserTimeData</a>
+                            </li>
+                            <li>
+                                <a href="#filter" >filter</a>
+                            </li>
+                            <li>
+                                <a href="#getAuditsList" >getAuditsList</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#timeToMinutes" >timeToMinutes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fecha1" >fecha1</a>
+                            </li>
+                            <li>
+                                <a href="#fecha2" >fecha2</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#chartVisible" >chartVisible</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(auditService: <a href="../injectables/FormatoAuditoriaService.html" target="_self">FormatoAuditoriaService</a>, filterService: <a href="../injectables/FilterService.html" target="_self">FilterService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>auditService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FormatoAuditoriaService.html" target="_self" >FormatoAuditoriaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>filterService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FilterService.html" target="_self" >FilterService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fecha1"></a>
+                        <b>fecha1</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:43</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fecha2"></a>
+                        <b>fecha2</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartVisible"></a>
+                        <b>chartVisible</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:46</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUserTimeChart"></a>
+                    <span class="name">
+                        <span ><b>createUserTimeChart</b></span>
+                        <a href="#createUserTimeChart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createUserTimeChart()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para la creación del gráfico correspondiente.
+Se especifica el tipo, y la información correspondiente extraida con el método <code>createUserTimeData</code> además
+de que se establecen unas configuraciónes del gráfico</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUserTimeData"></a>
+                    <span class="name">
+                        <span ><b>createUserTimeData</b></span>
+                        <a href="#createUserTimeData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createUserTimeData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener la información necesaria para generar el gráfico.
+Si <code>list</code> existe almacena los usuarios en <code>userList</code> el tiempo promedio por auditoria en
+<code>averageTime</code> y el tiempo total dedicado de cada usuario en <code>timeSummationList</code>
+gráfico</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Si <code>list</code> existe regresa una vez completada toda la operación para no ocultar el 
+gráfico</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filter"></a>
+                    <span class="name">
+                        <span ><b>filter</b></span>
+                        <a href="#filter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para filtrar los registros por las fechas proporcionadas por el componente padre
+<code>fecha1</code> y <code>fecha2</code>
+la ejecución del método <code>getAuditsList</code> y subscribe a esto el método <code>createUserTimeData</code> si los parámetros están
+vacíos</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Regresa si no hay registros coincidentes con los parámetros establecidos u retorna
+la ejecución del método <code>getAuditsList</code> y subscribe a esto el método <code>createUserTimeData</code> si los parámetros están
+vacíos</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAuditsList"></a>
+                    <span class="name">
+                        <span ><b>getAuditsList</b></span>
+                        <a href="#getAuditsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAuditsList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>formato_auditoria</code> ya que es la tabla necesaria para la
+generación de este gráfico
+el método <code>createUserTimeData</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Subscripción a los resultados de éste método para su futura utilización por
+el método <code>createUserTimeData</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Al inicializar el componente obtiene los registros de <code>formato_auditoria</code> y deja la información de esta
+a disposición del método <code>createUserTimeData</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeToMinutes"></a>
+                    <span class="name">
+                        <span ><b>timeToMinutes</b></span>
+                        <a href="#timeToMinutes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>timeToMinutes(time: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para convertir el tiempo que tomo realizarse cada auditoria en minutos</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>time</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Timepo requerido de cada auditoria</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna la cantidad de tiempo en minutos</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="averageTime"></a>
+                    <span class="name">
+                        <span ><b>averageTime</b></span>
+                        <a href="#averageTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chart"></a>
+                    <span class="name">
+                        <span ><b>chart</b></span>
+                        <a href="#chart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="list"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>list</b></span>
+                        <a href="#list"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/FormatoAuditoriaModel.html" target="_self" >FormatoAuditoriaModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listOriginal"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>listOriginal</b></span>
+                        <a href="#listOriginal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/FormatoAuditoriaModel.html" target="_self" >FormatoAuditoriaModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeSummationList"></a>
+                    <span class="name">
+                        <span ><b>timeSummationList</b></span>
+                        <a href="#timeSummationList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userList"></a>
+                    <span class="name">
+                        <span ><b>userList</b></span>
+                        <a href="#userList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/components/graphics/users/user-time/user-time.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { FormatoAuditoriaModel } from &#x27;../../../../models/formato-auditoria.model&#x27;;
+import { FormatoAuditoriaService } from &#x27;../../../../services/formato-auditoria.service&#x27;;
+import { Chart, ChartType } from &quot;chart.js&quot;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { FilterService } from &#x27;../../../../services/filter.service&#x27;;
+
+/**
+ * Componente de la gráfica &#x60;Tiempo dedicado a las auditorias&#x60;
+ * @implements {OnInit}
+ */
+@Component({
+  selector: &#x27;app-user-time&#x27;,
+  standalone: true,
+  imports: [],
+  templateUrl: &#x27;./user-time.component.html&#x27;,
+  styleUrl: &#x27;./user-time.component.css&#x27;
+})
+export class UserTimeComponent implements OnInit {
+
+  /**
+   * Al inicializar el componente obtiene los registros de &#x60;formato_auditoria&#x60; y deja la información de esta 
+   * a disposición del método &#x60;createUserTimeData&#x60;
+   * @method
+   */
+  ngOnInit(): void {
+    this.getAuditsList().add(() &#x3D;&gt; {
+      this.createUserTimeData()
+    })
+  }
+
+  /**
+   * @constructor
+   * @param {FormatoAuditoriaService} auditService 
+   * @param {FilterService} filterService 
+   */
+  constructor(private auditService: FormatoAuditoriaService, private filterService: FilterService) {
+    this.filterService.$emitter.subscribe(() &#x3D;&gt; {
+      this.filter();
+    })
+  }
+
+  @Input() fecha1: string &#x3D; &quot;&quot;; // Parámetro enviado desde el padre. Utilizado para el filtrado (inicio)
+  @Input() fecha2: string &#x3D; &quot;&quot;; // Parámetro enviado desde el padre. Utilizado para el filtrado (final)
+
+  @Output() chartVisible &#x3D; new EventEmitter&lt;boolean&gt; // Evento para cambiar la visibilidad del componente
+
+  chart: any; // Declara el gráfico
+
+  list?: FormatoAuditoriaModel[]; // Declara la lista de registros de &#x60;formato_auditoria&#x60; (modificable)
+  listOriginal?: FormatoAuditoriaModel[]; // Declara la lista de registros de &#x60;formato_auditoria&#x60;
+
+  userList: string[] &#x3D; []; // Declara la lista de los usuarios
+  timeSummationList : number[] &#x3D; []; // Declara la lista del total de tiempo dedicado por cada usuario a realizar auditorias
+  averageTime: number[] &#x3D; []; // Declara la lista del tiempo promedio dedicado a realizar auditorias de cada usuarios
+
+  /**
+   * Método para obtener todos los registros de &#x60;formato_auditoria&#x60; ya que es la tabla necesaria para la
+   * generación de este gráfico
+   * @method
+   * @returns {Subscription} Subscripción a los resultados de éste método para su futura utilización por
+   * el método &#x60;createUserTimeData&#x60;
+   */
+  getAuditsList(): Subscription {
+    return this.auditService.getAllAudits().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.list &#x3D; data;
+        this.listOriginal &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)   
+    })
+  }
+
+  /**
+   * Método para obtener la información necesaria para generar el gráfico.
+   * Si &#x60;list&#x60; existe almacena los usuarios en &#x60;userList&#x60; el tiempo promedio por auditoria en 
+   * &#x60;averageTime&#x60; y el tiempo total dedicado de cada usuario en &#x60;timeSummationList&#x60; 
+   * @method
+   * @returns {void} Si &#x60;list&#x60; existe regresa una vez completada toda la operación para no ocultar el 
+   * gráfico
+   */
+  createUserTimeData(): void {
+    if(this.list) {
+      const userArray &#x3D; Array.from(new Set(this.list.map(obj &#x3D;&gt; obj.usuario.nombre)))
+      const avgArray: number[] &#x3D; []
+      const summationTime: number[] &#x3D; [];
+      
+      const userTime &#x3D; new Map&lt;string, number[]&gt;();
+    
+      for(let i &#x3D; 0; i &lt; userArray.length; i++) {
+        const timeOfUser &#x3D; this.list.filter(obj &#x3D;&gt; obj.usuario.nombre &#x3D;&#x3D;&#x3D; userArray[i]).map(obj &#x3D;&gt; obj.tiempo)
+        const total &#x3D; timeOfUser.reduce((acumulado, time) &#x3D;&gt; acumulado + this.timeToMinutes(time), 0)
+        summationTime.push(total)
+        avgArray.push(total / timeOfUser.length)
+
+        userTime.set(userArray[i], [avgArray[i], summationTime[i]])
+      }
+
+      const array &#x3D; Array.from(userTime.entries()).sort((a, b) &#x3D;&gt; b[1][1] - a[1][1]);
+
+      array.forEach((value) &#x3D;&gt; {
+        this.userList.push(value[0])
+        this.averageTime.push(value[1][0])
+        this.timeSummationList.push(value[1][1])
+      })
+      this.createUserTimeChart();
+      return;
+    }
+    this.chartVisible.emit(false);
+  }
+
+  /**
+   * Método para convertir el tiempo que tomo realizarse cada auditoria en minutos
+   * @param {any} time Timepo requerido de cada auditoria
+   * @returns {Number} Retorna la cantidad de tiempo en minutos
+   */
+  timeToMinutes(time: any) {
+    const [hours, minutes, seconds] &#x3D; time.split(&#x27;:&#x27;).map(Number);
+    return (hours * 3600 + minutes * 60 + seconds)/60;
+  }
+
+  /**
+   * Método para la creación del gráfico correspondiente.
+   * Se especifica el tipo, y la información correspondiente extraida con el método &#x60;createUserTimeData&#x60; además
+   * de que se establecen unas configuraciónes del gráfico
+   * @method
+   */
+  createUserTimeChart() {
+    this.chart &#x3D; new Chart(&quot;UserTimeChart&quot;, {
+      data: {
+        labels: this.userList,
+        datasets: [{
+          type: &quot;bar&quot; as ChartType,
+          data: this.timeSummationList
+        }, {
+          label: &quot;Tiempo promedio por auditoria&quot;,
+          type: &quot;line&quot; as ChartType,
+          data: this.averageTime,
+          fill: false,
+          backgroundColor: &quot;#9AD0F5&quot;,
+          borderColor: &quot;#36A2EB&quot;
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: { display: true, text: &quot;Tiempo dedicado a las Auditorias&quot;},
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: &quot;Usuarios&quot; }
+          },
+          y: { 
+            title: { display: true, text: &quot;Tiempo en minutos&quot; }
+           }
+        }
+      }
+    })
+  }
+
+  /**
+   * Método para filtrar los registros por las fechas proporcionadas por el componente padre
+   * &#x60;fecha1&#x60; y &#x60;fecha2&#x60;
+   * @method
+   * @returns {void} Regresa si no hay registros coincidentes con los parámetros establecidos u retorna
+   * la ejecución del método &#x60;getAuditsList&#x60; y subscribe a esto el método &#x60;createUserTimeData&#x60; si los parámetros están
+   * vacíos
+   */  
+  filter() {
+    // Destruye el gráfico actual
+    this.chart.destroy();
+    // Vacía las listas de datos
+    this.userList &#x3D; [];
+    this.averageTime &#x3D; [];
+    this.timeSummationList &#x3D; [];
+    // Haz visible el gráfico
+    this.chartVisible.emit(true)
+
+    // Si los parámetros de filtrado están vacíos retorna la ejecución de &#x60;getAuditsList&#x60; subscribiendo a esto a &#x60;createUserTimeData&#x60; 
+    if(this.fecha1 &#x3D;&#x3D;&#x3D; &quot;&quot; &amp;&amp; this.fecha2 &#x3D;&#x3D;&#x3D; &quot;&quot;) {
+      return this.getAuditsList().add(() &#x3D;&gt; {
+        this.createUserTimeData()
+      })
+    }
+
+    // Filtra la información según los parámetros
+    const data &#x3D; this.filterService.filterData(this.listOriginal, { fecha1: this.fecha1, fecha2: this.fecha2 })
+    // Si no hay registros que cumplan con los parámetros, oculata el gráfico y regresa
+    if(data.length &#x3D;&#x3D;&#x3D; 0) {
+      this.chartVisible.emit(false);
+      return;
+    }
+
+    // Si existen registros que cumplan los parámetros asignalos a &#x60;list&#x60; y vuleve a generar la información pertinente
+    this.list &#x3D;  data;
+    this.createUserTimeData();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chart-container&quot;&gt;
+    &lt;canvas id&#x3D;&quot;UserTimeChart&quot;&gt;{{chart}}&lt;/canvas&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="chart-container">    <canvas id="UserTimeChart">{{chart}}</canvas></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AqlDefectosMayoresComponent', 'selector': 'aql'},{'name': 'AqlFormComponent', 'selector': 'app-aql-form'},{'name': 'AqlGraphicsComponent', 'selector': 'app-aql-graphics'},{'name': 'AuditoriaDelProcesoComponent', 'selector': 'app-proceso'},{'name': 'AuditoriaFormComponent', 'selector': 'app-auditoria-form'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClientesFormComponent', 'selector': 'app-clientes-form'},{'name': 'CustomersGraphicsComponent', 'selector': 'app-customers-graphics'},{'name': 'DefectGraphicsComponent', 'selector': 'app-defect-graphics'},{'name': 'DefectosComponent', 'selector': 'app-defectos'},{'name': 'DefectosFormComponent', 'selector': 'app-defectos-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormatoAuditoriaComponent', 'selector': 'app-formato-auditoria'},{'name': 'GraficasComponent', 'selector': 'app-graficas'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemsComponent', 'selector': 'app-items'},{'name': 'ItemsDefectsGraphicsComponent', 'selector': 'app-items-defects-graphics'},{'name': 'ItemsFormComponent', 'selector': 'app-items-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NoDataComponent', 'selector': 'app-no-data'},{'name': 'NoPageComponent', 'selector': 'app-no-page'},{'name': 'OrderItemsGraphicsComponent', 'selector': 'app-order-items-graphics'},{'name': 'PedidosComponent', 'selector': 'app-pedidos'},{'name': 'PedidosFormComponent', 'selector': 'app-pedidos-form'},{'name': 'ProcesosFormComponent', 'selector': 'app-procesos-form'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TablasComponent', 'selector': 'app-tablas'},{'name': 'TecnologiasComponent', 'selector': 'app-tecnologias'},{'name': 'TecnologiasFormComponent', 'selector': 'app-tecnologias-form'},{'name': 'UserGraphicsComponent', 'selector': 'app-user-graphics'},{'name': 'UserTimeComponent', 'selector': 'app-user-time'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosFormComponent', 'selector': 'app-usuarios-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'UserTimeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserTimeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

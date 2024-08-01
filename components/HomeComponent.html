@@ -1,0 +1,2153 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/home.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente del inicio.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/NavbarComponent.html" target="_self" >NavbarComponent</a></code>
+                                <code><a href="../components/FooterComponent.html" target="_self" >FooterComponent</a></code>
+                            <code>FormsModule</code>
+                            <code>NgIconComponent</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">viewProviders</td>
+                <td class="col-md-9">
+                    <code>
+                            <code>provideIcons({ bootstrapX, bootstrapArrowBarUp })</code>
+                    </code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#auditsList" >auditsList</a>
+                            </li>
+                            <li>
+                                <a href="#buttonVisible" >buttonVisible</a>
+                            </li>
+                            <li>
+                                <a href="#buttonVisibleArray" >buttonVisibleArray</a>
+                            </li>
+                            <li>
+                                <a href="#fecha1" >fecha1</a>
+                            </li>
+                            <li>
+                                <a href="#fecha2" >fecha2</a>
+                            </li>
+                            <li>
+                                <a href="#filterVisible" >filterVisible</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#oiList" >oiList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#ordersList" >ordersList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#pdList" >pdList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#processList" >processList</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#closeFilter" >closeFilter</a>
+                            </li>
+                            <li>
+                                <a href="#convertData" >convertData</a>
+                            </li>
+                            <li>
+                                <a href="#dataOfAudits" >dataOfAudits</a>
+                            </li>
+                            <li>
+                                <a href="#dataOfOrders" >dataOfOrders</a>
+                            </li>
+                            <li>
+                                <a href="#dataOfProcess" >dataOfProcess</a>
+                            </li>
+                            <li>
+                                <a href="#exportExcel" >exportExcel</a>
+                            </li>
+                            <li>
+                                <a href="#getAuditsToExcel" >getAuditsToExcel</a>
+                            </li>
+                            <li>
+                                <a href="#getOIToExcel" >getOIToExcel</a>
+                            </li>
+                            <li>
+                                <a href="#getOrdersToExcel" >getOrdersToExcel</a>
+                            </li>
+                            <li>
+                                <a href="#getPDToExcel" >getPDToExcel</a>
+                            </li>
+                            <li>
+                                <a href="#getProcessToExcel" >getProcessToExcel</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#nullFields" >nullFields</a>
+                            </li>
+                            <li>
+                                <a href="#showButton" >showButton</a>
+                            </li>
+                            <li>
+                                <a href="#showFilter" >showFilter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(titleService: Title, auditsService: <a href="../injectables/FormatoAuditoriaService.html" target="_self">FormatoAuditoriaService</a>, processService: <a href="../injectables/AuditoriaDelProcesoService.html" target="_self">AuditoriaDelProcesoService</a>, pdService: <a href="../injectables/ProcesoDefectoService.html" target="_self">ProcesoDefectoService</a>, ordersService: <a href="../injectables/PedidosService.html" target="_self">PedidosService</a>, oiService: <a href="../injectables/PedidoItemService.html" target="_self">PedidoItemService</a>, excelService: <a href="../injectables/ExcelService.html" target="_self">ExcelService</a>, filterService: <a href="../injectables/FilterService.html" target="_self">FilterService</a>, alertsService: <a href="../injectables/AlertsService.html" target="_self">AlertsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/home/home.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>titleService</td>
+                                                  
+                                                        <td>
+                                                                    <code>Title</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para interactuar con el titulo</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>auditsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FormatoAuditoriaService.html" target="_self" >FormatoAuditoriaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de <code>fomato_auditoria</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>processService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuditoriaDelProcesoService.html" target="_self" >AuditoriaDelProcesoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de <code>auditoria_del_proceso</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>pdService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProcesoDefectoService.html" target="_self" >ProcesoDefectoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>servicio de <code>proceso_defecto</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>ordersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PedidosService.html" target="_self" >PedidosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de <code>pedidos</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>oiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PedidoItemService.html" target="_self" >PedidoItemService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de <code>pedido_item</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>excelService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ExcelService.html" target="_self" >ExcelService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de Excel</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>filterService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FilterService.html" target="_self" >FilterService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio del Filtro</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>alertsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertsService.html" target="_self" >AlertsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de aalertas</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeFilter"></a>
+                    <span class="name">
+                        <span ><b>closeFilter</b></span>
+                        <a href="#closeFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeFilter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="123"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Esconde el filtro y elimina los valores de fecha1 y fecha2.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertData"></a>
+                    <span class="name">
+                        <span ><b>convertData</b></span>
+                        <a href="#convertData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertData(audits: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, process: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, orders: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="260"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:260</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Filtra la información formateada si hay parámetros en el filtro.
+ y si no, solo regresa para terminar el método</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>audits</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Información de <code>formato_auditoria</code> formateada.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>process</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Información de <code>auditoria_del_proceso</code> y <code>proceso_defecto</code> formateada.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>orders</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Información de <code>pedidos</code> y <code>pedido_item</code> fomateada.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Si hay información que cumpla con los parámetros, devuelvela como un array de objetos
+y si no, solo regresa para terminar el método</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataOfAudits"></a>
+                    <span class="name">
+                        <span ><b>dataOfAudits</b></span>
+                        <a href="#dataOfAudits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dataOfAudits()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="292"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:292</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Formatea los campos de <code>auditsList</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna un array de objetos con la información formateada</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataOfOrders"></a>
+                    <span class="name">
+                        <span ><b>dataOfOrders</b></span>
+                        <a href="#dataOfOrders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dataOfOrders()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="364"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:364</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Formatea los campos de <code>pedidos</code> y <code>pedido_item</code>. Crea un objeto por cada registro de
+<code>proceso_defecto</code> la cual puede tener multiples registros para un solo registro de
+<code>pedidos</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna un array de objetos con los campos formateados.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataOfProcess"></a>
+                    <span class="name">
+                        <span ><b>dataOfProcess</b></span>
+                        <a href="#dataOfProcess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dataOfProcess()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="325"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:325</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Formatea los campos de <code>auditoria_del_proceso</code> y <code>proceso_defecto</code>. Crea un objeto por cada
+registro de <code>proceso_defecto</code> la cual puede tener multiples registros para un solo registro de
+<code>auditoria_del_proceso</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna un array de objetos con los capos formateados.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exportExcel"></a>
+                    <span class="name">
+                        <span ><b>exportExcel</b></span>
+                        <a href="#exportExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>exportExcel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="219"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Establece la información según los parámetros establecidos en el filtro.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Es un método void, pero tiene un return para que ya no ejecute codigo innecesario</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAuditsToExcel"></a>
+                    <span class="name">
+                        <span ><b>getAuditsToExcel</b></span>
+                        <a href="#getAuditsToExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAuditsToExcel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="134"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae los datos de la tabla <code>formato_auditoria</code>.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Devuelve una suscripción a los datos de <code>formato_auditoria</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOIToExcel"></a>
+                    <span class="name">
+                        <span ><b>getOIToExcel</b></span>
+                        <a href="#getOIToExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOIToExcel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="202"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:202</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae los datos de la tabla <code>pedido_item</code>.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Devuelve una suscripción a los datos de <code>pedido_item</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOrdersToExcel"></a>
+                    <span class="name">
+                        <span ><b>getOrdersToExcel</b></span>
+                        <a href="#getOrdersToExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOrdersToExcel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="168"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:168</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae los datos de la tabla <code>pedidos</code>.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Devuelve una suscripción a los datos de <code>pedidos</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPDToExcel"></a>
+                    <span class="name">
+                        <span ><b>getPDToExcel</b></span>
+                        <a href="#getPDToExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPDToExcel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="185"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:185</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae los datos de la tabla <code>proceso_defecto</code>.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Devuelve una suscripción a los datos de <code>proceso_defecto</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProcessToExcel"></a>
+                    <span class="name">
+                        <span ><b>getProcessToExcel</b></span>
+                        <a href="#getProcessToExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProcessToExcel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="151"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:151</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae los datos de la tabla <code>auditoria_del_proceso</code>.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Subscription</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Devuelve una suscripción a los datos de <code>auditoria_del_proceso</code></p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Al inicializar el componete obtner la información de las tablas a exportar a Excel y
+que las métodos de esto subscriban a las métodos para formatear la información para que no haya
+problemas en la disponibilidad de la información.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nullFields"></a>
+                    <span class="name">
+                        <span ><b>nullFields</b></span>
+                        <a href="#nullFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nullFields(array: any[], immutableFields: string[], id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="398"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:398</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Vacía los campos repetidos de la información formateada, donde los campos de sus tablas unión
+pertenezca a un mismo registro de una de las tablas principales.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>array</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>immutableFields</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna el array recibido pero con los campos repetidos de cada objeto vacíos.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showButton"></a>
+                    <span class="name">
+                        <span ><b>showButton</b></span>
+                        <a href="#showButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showButton()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja la visibilidad del botón para exportar los datos a Excel.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showFilter"></a>
+                    <span class="name">
+                        <span ><b>showFilter</b></span>
+                        <a href="#showFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showFilter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/components/home/home.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Hace visible el filtro.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auditsList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>auditsList</b></span>
+                        <a href="#auditsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/FormatoAuditoriaModel.html" target="_self" >FormatoAuditoriaModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/components/home/home.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buttonVisible"></a>
+                    <span class="name">
+                        <span ><b>buttonVisible</b></span>
+                        <a href="#buttonVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/components/home/home.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buttonVisibleArray"></a>
+                    <span class="name">
+                        <span ><b>buttonVisibleArray</b></span>
+                        <a href="#buttonVisibleArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/components/home/home.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fecha1"></a>
+                    <span class="name">
+                        <span ><b>fecha1</b></span>
+                        <a href="#fecha1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/components/home/home.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fecha2"></a>
+                    <span class="name">
+                        <span ><b>fecha2</b></span>
+                        <a href="#fecha2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/components/home/home.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterVisible"></a>
+                    <span class="name">
+                        <span ><b>filterVisible</b></span>
+                        <a href="#filterVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/components/home/home.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="oiList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>oiList</b></span>
+                        <a href="#oiList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PedidoItemModel.html" target="_self" >PedidoItemModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/components/home/home.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ordersList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>ordersList</b></span>
+                        <a href="#ordersList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PedidosModel.html" target="_self" >PedidosModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/components/home/home.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pdList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>pdList</b></span>
+                        <a href="#pdList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ProcesoDefectoModel.html" target="_self" >ProcesoDefectoModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/components/home/home.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>processList</b></span>
+                        <a href="#processList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/AuditoriaDelProcesoModel.html" target="_self" >AuditoriaDelProcesoModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/components/home/home.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { NavbarComponent } from &#x27;../navbar/navbar.component&#x27;;
+import { FooterComponent } from &#x27;../footer/footer.component&#x27;;
+import { FormatoAuditoriaModel } from &#x27;../../models/formato-auditoria.model&#x27;;
+import { FormatoAuditoriaService } from &#x27;../../services/formato-auditoria.service&#x27;;
+import { AuditoriaDelProcesoModel } from &#x27;../../models/auditoria-del-proceso.model&#x27;;
+import { AuditoriaDelProcesoService } from &#x27;../../services/auditoria-del-proceso.service&#x27;;
+import { ProcesoDefectoModel } from &#x27;../../models/proceso-defecto.model&#x27;;
+import { ProcesoDefectoService } from &#x27;../../services/proceso-defecto.service&#x27;;
+import { PedidosModel } from &#x27;../../models/pedidos.model&#x27;;
+import { PedidosService } from &#x27;../../services/pedidos.service&#x27;;
+import { PedidoItemModel } from &#x27;../../models/pedido-item.model&#x27;;
+import { PedidoItemService } from &#x27;../../services/pedido-item.service&#x27;;
+import { ExcelService } from &#x27;../../services/excel.service&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { provideIcons, NgIconComponent } from &#x27;@ng-icons/core&#x27;;
+import { bootstrapX, bootstrapArrowBarUp } from &quot;@ng-icons/bootstrap-icons&quot;;
+import { FilterService } from &#x27;../../services/filter.service&#x27;;
+import { AlertsService } from &#x27;../../services/alerts.service&#x27;;
+
+/**
+ * Componente del inicio.
+ * @implements {OnInit}
+ */
+@Component({
+  selector: &#x27;app-home&#x27;,
+  standalone: true,
+  imports: [NavbarComponent, FooterComponent, FormsModule, NgIconComponent],
+  viewProviders: [provideIcons({bootstrapX, bootstrapArrowBarUp})],
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrl: &#x27;./home.component.css&#x27;
+})
+export class HomeComponent implements OnInit {
+    
+  /**
+   * @constructor
+   * @param {Title} titleService Servicio para interactuar con el titulo
+   * @param {FormatoAuditoriaService} auditsService Servicio de &#x60;fomato_auditoria&#x60;
+   * @param {AuditoriaDelProcesoService} processService Servicio de &#x60;auditoria_del_proceso&#x60;
+   * @param {ProcesoDefectoService} pdService servicio de &#x60;proceso_defecto&#x60;
+   * @param {PedidosService} ordersService Servicio de &#x60;pedidos&#x60;
+   * @param {PedidoItemService} oiService Servicio de &#x60;pedido_item&#x60;
+   * @param {ExcelService} excelService Servicio de Excel
+   * @param {FilterService} filterService Servicio del Filtro
+   * @param {AlertsService} alertsService Servicio de aalertas
+   */
+  constructor(
+    private titleService: Title,
+    private auditsService: FormatoAuditoriaService,
+    private processService: AuditoriaDelProcesoService,
+    private pdService: ProcesoDefectoService,
+    private ordersService: PedidosService,
+    private oiService: PedidoItemService,
+    private excelService: ExcelService,
+    private filterService: FilterService,
+    private alertsService: AlertsService
+  ) {}
+
+  /**
+   * Al inicializar el componete obtner la información de las tablas a exportar a Excel y
+   * que las métodos de esto subscriban a las métodos para formatear la información para que no haya 
+   * problemas en la disponibilidad de la información.
+   */
+  ngOnInit(): void {
+    // Establece un titulo al inicializar el componente.
+    this.titleService.setTitle(&quot;Home&quot;);
+
+    // Extrae los datos de &#x60;formato_auditoria&#x60;
+    this.getAuditsToExcel().add(() &#x3D;&gt; {
+      this.dataOfAudits()
+    })
+    //Extrae los datos de &#x60;auditoria_del_proceso&#x60;
+    this.getProcessToExcel().add(() &#x3D;&gt; {
+      this.dataOfProcess()
+    })
+    // Extrae los datos de &#x60;pedidos&#x60;
+    this.getOrdersToExcel().add(() &#x3D;&gt; {
+      this.dataOfOrders()
+    })
+  }
+  
+
+  auditsList?: FormatoAuditoriaModel[]; // Inicializamos la lista de &#x60;formato_auditoria&#x60;
+  processList?: AuditoriaDelProcesoModel[]; // Inicializamos la lista de &#x60;auditoria_del_proceso&#x60;
+  ordersList?: PedidosModel[]; // Inicializamos la lista de &#x60;pedidos&#x60;
+  pdList?: ProcesoDefectoModel[]; // // Inicializamos la lista de &#x60;proceso_defecto&#x60;
+  oiList?: PedidoItemModel[]; // Inicializamos la lista de &#x60;pedido_item&#x60;
+
+  fecha1: string &#x3D; &quot;&quot;; // Primer propiedad del segundo parámetro de filterData - fecha inicial
+  fecha2: string &#x3D; &quot;&quot;; // Segunda propiedad del segundo parámetro de filterData - fecha de finalización
+
+  buttonVisibleArray: any[] &#x3D; []; // Array llenado cuando se activa cada método de la extracción de información
+  buttonVisible: boolean &#x3D; false; // Visibilidad del botón para exportar a Excel. Dependiente de buttonVisibleArray
+  filterVisible: boolean &#x3D; false; // Visibilidad del filtro.
+
+  /**
+   * Maneja la visibilidad del botón para exportar los datos a Excel.
+   * @method showButton
+   */
+  showButton() {
+    // Cada vez que se llama agrega un elemto a buttonVisibleArray
+    this.buttonVisibleArray.push(&quot;x&quot;);
+    // Cuando se extraigan todos los datos (3 tablas) haz visible el botón.
+    if(this.buttonVisibleArray.length &#x3D;&#x3D;&#x3D; 3) {
+      this.buttonVisible &#x3D; true;
+    }
+  }
+
+  /**
+   * Hace visible el filtro.
+   * @method showFilter
+   */
+  showFilter() {
+    this.filterVisible &#x3D; true
+  }
+
+  /**
+   * Esconde el filtro y elimina los valores de fecha1 y fecha2.
+   * @method closeFilter
+   */
+  closeFilter() {
+    this.filterVisible &#x3D; false;
+    this.fecha1 &#x3D; &quot;&quot;;
+    this.fecha2 &#x3D; &quot;&quot;;
+  }
+
+  /**
+   * Extrae los datos de la tabla &#x60;formato_auditoria&#x60;.
+   * @method getAuditsToExcel
+   * @returns {Subscription} Devuelve una suscripción a los datos de &#x60;formato_auditoria&#x60;
+   */
+  getAuditsToExcel(): Subscription {
+    return this.auditsService.getAllAudits().subscribe({
+      // si es éxitosa asigna un valor a &#x60;auditList&#x60; y llama al método &#x60;showButton&#x60;
+      next: (data) &#x3D;&gt; {
+        this.auditsList &#x3D; data;
+        this.showButton()
+      },
+      // Si falla muestra el error en consola.
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Extrae los datos de la tabla &#x60;auditoria_del_proceso&#x60;.
+   * @method getProcessToExcel
+   * @returns {Subscription} Devuelve una suscripción a los datos de &#x60;auditoria_del_proceso&#x60;
+   */
+  getProcessToExcel(): Subscription {
+    return this.processService.getAllProcesses().subscribe({
+      // Si es éxitosa asigna un valor a &#x60;processList&#x60; y llama a &#x60;getPDToExcel&#x60;
+      next: (data) &#x3D;&gt; {
+        this.processList &#x3D; data;
+        this.getPDToExcel();
+      },
+      // Si falla imprime el error en consola
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Extrae los datos de la tabla &#x60;pedidos&#x60;.
+   * @method getOrdersToExcel
+   * @returns {Subscription} Devuelve una suscripción a los datos de &#x60;pedidos&#x60;
+   */
+  getOrdersToExcel(): Subscription {
+    return this.ordersService.getAllOrders().subscribe({
+      // Si es éxitosa asigna un valor a &#x60;ordersList&#x60; y llama a &#x60;getOIToExcel&#x60;
+      next: (data) &#x3D;&gt; {
+        this.ordersList &#x3D; data;
+        this.getOIToExcel();
+      },
+      // Si hay un error, muestralo por consola
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Extrae los datos de la tabla &#x60;proceso_defecto&#x60;.
+   * @method getPDToExcel
+   * @returns {Subscription} Devuelve una suscripción a los datos de &#x60;proceso_defecto&#x60;
+   */
+  getPDToExcel(): void {
+    this.pdService.getAllPD().subscribe({
+      // Si es éxitosa asigna un valor a &#x60;pdList&#x60; y llama a &#x60;showButton&#x60;
+      next: (data) &#x3D;&gt; {
+        this.pdList &#x3D; data;
+        this.showButton()
+      },
+      // Si falla, muestra el error en consola.
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Extrae los datos de la tabla &#x60;pedido_item&#x60;.
+   * @method getOIToExcel
+   * @returns {Subscription} Devuelve una suscripción a los datos de &#x60;pedido_item&#x60;
+   */
+  getOIToExcel(): void {
+    this.oiService.getAllOI().subscribe({
+      // Si es éxitosa asigna un valor a &#x60;oiList&#x60; y llama a &#x60;showButton&#x60;
+      next: (data) &#x3D;&gt; {
+        this.oiList &#x3D; data;
+        this.showButton()
+      },
+      // Si falla, muestra el error en consola
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Establece la información según los parámetros establecidos en el filtro.
+   * @method
+   * @returns {any} Es un método void, pero tiene un return para que ya no ejecute codigo innecesario
+   */
+  exportExcel(): void {
+    // Asigna los valores de la información obtenida en constantes
+    const audits &#x3D; this.dataOfAudits();
+    const process &#x3D; this.dataOfProcess();
+    const orders &#x3D; this.dataOfOrders();
+
+    // variable que almacenara la información final
+    let data: any;
+
+    // Si no hay parámetros en el filtro, exporta toda la información existente en las tablas.
+    if(this.fecha1 &#x3D;&#x3D;&#x3D; &quot;&quot; &amp;&amp; this.fecha2 &#x3D;&#x3D;&#x3D; &quot;&quot;) {
+      data &#x3D; []
+      
+      // Solo exporta las tablas que contengan información.
+      audits.length &gt; 0 ? data.push({data: audits, sheetName: &quot;Formato Auditoria&quot;}) : &quot;&quot;;
+      // Vacía los campos repetidos de las tablas, que tiene multiples registros es sus tablas unión
+      process.length &gt; 0 ? data.push({data: this.nullFields(process, [&quot;Defecto&quot;], &quot;#PNC&quot;) , sheetName: &quot;Auditoria del proceso&quot;}) : &quot;&quot;;
+      orders.length &gt; 0 ? data.push({data: this.nullFields(orders, [&quot;Código item&quot;, &quot;Cantidad&quot;, &quot;Tecnologia item&quot;], &quot;Código pedido&quot;), sheetName: &quot;Pedidos&quot;}) : &quot;&quot;;
+      
+      // Oculta el filtro
+      this.filterVisible &#x3D; false;
+      // Termina el método activando el método &#x60;exportAsExcel&#x60; del servicio &#x60;excelService&#x60;
+      return this.excelService.exportAsExcel(data)
+    }
+
+    // Si hay algún parámetro en el filtro, obten la información que lo cumpla
+    data &#x3D; this.convertData(audits, process, orders);
+    // Si hay información que cumpla con el parámetro, conviertela a Excel, sino solo oculta el filtro
+    data ? this.excelService.exportAsExcel(data) : this.filterVisible &#x3D; false;
+
+  }
+
+  /**
+   * Filtra la información formateada si hay parámetros en el filtro.
+   * @method
+   * @param {any} audits Información de &#x60;formato_auditoria&#x60; formateada.
+   * @param {any} process Información de &#x60;auditoria_del_proceso&#x60; y &#x60;proceso_defecto&#x60; formateada.
+   * @param {any} orders Información de &#x60;pedidos&#x60; y &#x60;pedido_item&#x60; fomateada.
+   * @returns {any} Si hay información que cumpla con los parámetros, devuelvela como un array de objetos
+   *  y si no, solo regresa para terminar el método
+   */
+  convertData(audits: any, process: any, orders:any) {
+    // Filtra toda la información formateada, con los parámetros establecidos
+    const auditsFiltered &#x3D; this.filterService.filterData(audits, { fecha1: this.fecha1, fecha2: this.fecha2 })
+    const processFiltered &#x3D; this.filterService.filterData(process, { fecha1: this.fecha1, fecha2: this.fecha2 })
+    const ordersFiltered &#x3D; this.filterService.filterData(orders, { fecha1: this.fecha1, fecha2: this.fecha2 })
+
+    // Crea una constante que almacenara la información final
+    const data &#x3D; [];
+
+    // VVacía los campos repetidos de las tablas, que tiene multiples registros es sus tablas unión
+    const processFilteredAndNull &#x3D; this.nullFields(processFiltered, [&quot;Defecto&quot;], &quot;#PNC&quot;)
+    const ordersFilteredAndNull &#x3D; this.nullFields(ordersFiltered, [&quot;Código item&quot;, &quot;Cantidad&quot;, &quot;Tecnologia item&quot;], &quot;codigoPedido&quot;)
+    
+    // Solo añade la tabla a la información final si tiene registros
+    auditsFiltered.length &gt; 0 ? data.push({data: auditsFiltered, sheetName: &quot;Formato Auditoria&quot;}) : &quot;&quot;,
+    processFiltered.length &gt; 0 ? data.push({data: processFilteredAndNull, sheetName: &quot;Auditoria del proceso&quot;}) : &quot;&quot;,
+    ordersFiltered.length &gt; 0 ? data.push({data: ordersFilteredAndNull, sheetName: &quot;Pedidos&quot;}) : &quot;&quot;
+
+    // Lanza una alerta de error y regresa si ninguna tabla cumple con los 
+    if(data.length &#x3D;&#x3D;&#x3D; 0) {
+      this.alertsService.errorAlert();
+      return;
+    }
+
+    return data;
+  }
+
+  /**
+   * Formatea los campos de &#x60;auditsList&#x60;
+   * @method
+   * @returns {Array&lt;any&gt;} Retorna un array de objetos con la información formateada
+   */
+  dataOfAudits() {
+    // Almacena la información resultante en la constante &#x60;data&#x60;
+    const data &#x3D; this.auditsList ? 
+    // Si existe &#x60;auditList&#x60; crea un objeto con la siguente información por cada registro existente.
+      this.auditsList.map(audit &#x3D;&gt; ({
+        PO: audit.PO,
+        fecha_auditoria: audit.fecha_auditoria,
+        &quot;Código Pedido&quot;: audit.codigoPedido,
+        &quot;Código Item&quot;: audit.codigoItem,
+        &quot;Hora inicio&quot;: audit.hora_inicio,
+        &quot;Hora fin&quot;: audit.hora_fin,
+        Tiempo: audit.tiempo,
+        Auditor: audit.usuario.nombre,
+        &quot;Tipo de auditoria&quot;: audit.tipo_auditoria,
+        Tecnologia: audit.tecnologia.nombre,
+        Alertas: audit.alertas_proceso,
+        &quot;Cantidad del lote&quot;: audit.cantidad_lote,
+        &quot;Tipo de muestra&quot;: audit.tipo_muestra,
+        AQL: audit.tipo_muestra &#x3D;&#x3D;&#x3D; &quot;reducida&quot; ? 
+          audit.aql.muestra_inspeccion_reducida : audit.tipo_muestra &#x3D;&#x3D;&#x3D; &quot;normal&quot; ? 
+          audit.aql.muestra_inspeccion_normal : audit.aql.muestra_inspeccion_severa,
+        &quot;Status&quot;: audit.estado
+      })) : []
+    return data;
+  }
+
+  /**
+   * Formatea los campos de &#x60;auditoria_del_proceso&#x60; y &#x60;proceso_defecto&#x60;. Crea un objeto por cada 
+   * registro de &#x60;proceso_defecto&#x60; la cual puede tener multiples registros para un solo registro de 
+   * &#x60;auditoria_del_proceso&#x60;
+   * @method
+   * @returns {Array&lt;any&gt;} Retorna un array de objetos con los capos formateados.
+   */
+  dataOfProcess() {
+    // Allmacena la información reusltante en la constante &#x60;data&#x60;
+    const data &#x3D; this.processList &amp;&amp; this.pdList ? 
+    // Si existe &#x60;processList&#x60; y &#x60;pdList&#x60; itera por cada objeto de &#x60;processList&#x60;
+      this.processList.map(process &#x3D;&gt; {
+        // Encuentra los objetos en &#x60;pdList&#x60; donde la propiedad &#x60;IDproceso&#x60; sea la misma que en &#x60;processList&#x60;
+        const pdFiltered &#x3D; this.pdList?.filter(pd &#x3D;&gt; pd.IDproceso &#x3D;&#x3D;&#x3D; process.IDproceso)
+        // Retorna un objeto por cada objeto de &#x60;pdList&#x60;
+        return pdFiltered?.map(pd &#x3D;&gt; ({
+          &quot;#PNC&quot;: process.pnc,
+          fecha_apertura: process.fecha_apertura,
+          &quot;Cantidad rechazada&quot;: process.cantidad_rechazada,
+          &quot;Defectos encontrados&quot;: process.defectos_encontrados,
+          Defecto: pd.codigoDefecto,
+          Operario: process.operario,
+          &quot;Acción&quot;: process.accion,
+          &quot;Aprobado por&quot;: process.aprobado_por,
+          &quot;Comentario de la acción&quot;: process.comentario_accion,
+          &quot;Cantidad de descarte&quot;: process.cantidad_descarte,
+          &quot;Cantidad aceptada&quot;: process.cantidad_aceptada,
+          &quot;Observación&quot;: process.observacion,
+          fecha_cierre: process.fecha_cierre,
+          &quot;Re auditoria&quot;: process.re_auditoria,
+          &quot;Estado re-auditoria&quot;: process.estado_re_auditoria,
+          &quot;PO auditoria&quot;: process.formato_auditorium.PO
+        }))
+      }) : []
+
+    // Convierte el array de arrays reulstante a un array de objetos y retornalo.
+    return data.flat();
+  }
+
+  /**
+   * Formatea los campos de &#x60;pedidos&#x60; y &#x60;pedido_item&#x60;. Crea un objeto por cada registro de 
+   * &#x60;proceso_defecto&#x60; la cual puede tener multiples registros para un solo registro de 
+   * &#x60;pedidos&#x60;
+   * @method
+   * @returns {Array&lt;any&gt;} Retorna un array de objetos con los campos formateados.
+   */
+  dataOfOrders() {
+    // Almacena el resultado en la constante &#x60;data&#x60;
+    const data &#x3D; this.ordersList &amp;&amp; this.oiList
+      // Si existe &#x60;ordersList&#x60; y &#x60;oiList&#x60;, itera por cada elemento de &#x60;ordersList&#x60;
+        ? this.ordersList.map(order &#x3D;&gt; {
+          // Encuentra los elemtos de &#x60;oiList&#x60; donde su propiedad &#x60;codigoPedido&#x60; sea igual en &#x60;ordersList&#x60;
+            const oiFiltered &#x3D; this.oiList?.filter(oi &#x3D;&gt; oi.codigoPedido &#x3D;&#x3D;&#x3D; order.codigoPedido);
+            // Retorna un objeto por cada elemento de &#x60;oiList&#x60;
+            return oiFiltered?.map(oi &#x3D;&gt; ({
+                &quot;Código pedido&quot;: order.codigoPedido,
+                &quot;Descripción&quot;: order.descripcion,
+                Tecnologia: order.tecnologia.nombre,
+                &quot;Código cliente&quot;: order.codigoCliente,
+                &quot;Código item&quot;: oi.item.codigoItem,
+                Cantidad: oi.cantidad,
+                &quot;Tecnologia item&quot;: oi.item.tecnologia.nombre,
+                createdAt: order.createdAt
+            }));
+        })
+        : [];
+
+    // Convierte el array de arrays resultante en un array de objetos.
+    return data.flat();
+}
+
+/**
+ * Vacía los campos repetidos de la información formateada, donde los campos de sus tablas unión 
+ * pertenezca a un mismo registro de una de las tablas principales.
+ * @method
+ * @param {any[]} array 
+ * @param {String[]} immutableFields 
+ * @param {String} id 
+ * @returns {any[]} Retorna el array recibido pero con los campos repetidos de cada objeto vacíos.
+ */
+  nullFields(array: any[], immutableFields: string[], id: string) {
+    // Regresa si no hay un array u este no tiene información
+    if(!array || array.length &#x3D;&#x3D;&#x3D; 0) return;
+    // Declara el identificador actual
+    let currentIdentifier;
+    // Declara el primer objeto (de los registros que tenga el mismo valor de &#x60;id&#x60;)
+    let firstObj;
+    // Itera por cada objeto del array
+    for (const obj of array) {
+      // Si el valor de &#x60;id&#x60; cambia, cambia el valor de &#x60;currentIdentifier&#x60; y &#x60;firstObject&#x60;
+      if (currentIdentifier !&#x3D;&#x3D; obj[id]) {
+        currentIdentifier &#x3D; obj[id]
+        firstObj &#x3D; obj
+      }
+      // Itera por cada pripoedad del objeto
+      for (const field in obj) {
+        // Vacía los campos si estos no son elemento de &#x60;immutableFields&#x60; o si no es el primer objeto
+          if (!immutableFields.includes(field) &amp;&amp; obj !&#x3D;&#x3D; firstObj) {
+            obj[field] &#x3D; null;
+          } 
+      }
+    }
+    // Regresa el array modificado
+    return array;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-navbar [sideBar]&#x3D;&quot;false&quot;&gt;&lt;/app-navbar&gt;
+
+&lt;div class&#x3D;&quot;home&quot;&gt;
+    @if(buttonVisible) {
+        &lt;div class&#x3D;&quot;export-container&quot;&gt;
+            &lt;button class&#x3D;&quot;export-data&quot;&gt;
+                &lt;div class&#x3D;&quot;button-content&quot; (click)&#x3D;&quot;showFilter()&quot;&gt;
+                    &lt;p class&#x3D;&quot;button-text&quot;&gt;Exportar datos&lt;/p&gt;
+                    &lt;ng-icon class&#x3D;&quot;export-icon&quot; name&#x3D;&quot;bootstrapArrowBarUp&quot;&gt;&lt;/ng-icon&gt;
+                &lt;/div&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    }
+        @if(filterVisible) {
+            &lt;div class&#x3D;&quot;range&quot;&gt;
+                &lt;ng-icon name&#x3D;&quot;bootstrapX&quot; class&#x3D;&quot;close-icon&quot; (click)&#x3D;&quot;closeFilter()&quot;&gt;&lt;/ng-icon&gt;
+                &lt;div class&#x3D;&quot;fields-container&quot;&gt;
+                    &lt;div class&#x3D;&quot;field&quot;&gt;
+                        &lt;label for&#x3D;&quot;fecha1&quot;&gt;Desde&lt;/label&gt;        
+                        &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;fecha1&quot; id&#x3D;&quot;fecha1&quot; [(ngModel)]&#x3D;&quot;fecha1&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field&quot;&gt;
+                        &lt;label for&#x3D;&quot;fecha2&quot;&gt;Hasta&lt;/label&gt;    
+                        &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;fecha2&quot; id&#x3D;&quot;fecha2&quot; [(ngModel)]&#x3D;&quot;fecha2&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;exportExcel()&quot; class&#x3D;&quot;filter-button&quot;&gt;Exportar&lt;/button&gt;
+            &lt;/div&gt;
+        }
+    &lt;div class&#x3D;&quot;rights-container&quot;&gt;
+        &lt;a href&#x3D;&quot;https://www.freepik.es/&quot; target&#x3D;&quot;_blank&quot;&gt;Imagen de freepik&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;app-footer&gt;&lt;/app-footer&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-navbar [sideBar]="false"></app-navbar><div class="home">    @if(buttonVisible) {        <div class="export-container">            <button class="export-data">                <div class="button-content" (click)="showFilter()">                    <p class="button-text">Exportar datos</p>                    <ng-icon class="export-icon" name="bootstrapArrowBarUp"></ng-icon>                </div>            </button>        </div>    }        @if(filterVisible) {            <div class="range">                <ng-icon name="bootstrapX" class="close-icon" (click)="closeFilter()"></ng-icon>                <div class="fields-container">                    <div class="field">                        <label for="fecha1">Desde</label>                                <input type="date" name="fecha1" id="fecha1" [(ngModel)]="fecha1">                    </div>                    <div class="field">                        <label for="fecha2">Hasta</label>                            <input type="date" name="fecha2" id="fecha2" [(ngModel)]="fecha2">                    </div>                </div>                <button type="submit" (click)="exportExcel()" class="filter-button">Exportar</button>            </div>        }    <div class="rights-container">        <a href="https://www.freepik.es/" target="_blank">Imagen de freepik</a>    </div></div><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AqlDefectosMayoresComponent', 'selector': 'aql'},{'name': 'AqlFormComponent', 'selector': 'app-aql-form'},{'name': 'AqlGraphicsComponent', 'selector': 'app-aql-graphics'},{'name': 'AuditoriaDelProcesoComponent', 'selector': 'app-proceso'},{'name': 'AuditoriaFormComponent', 'selector': 'app-auditoria-form'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClientesFormComponent', 'selector': 'app-clientes-form'},{'name': 'CustomersGraphicsComponent', 'selector': 'app-customers-graphics'},{'name': 'DefectGraphicsComponent', 'selector': 'app-defect-graphics'},{'name': 'DefectosComponent', 'selector': 'app-defectos'},{'name': 'DefectosFormComponent', 'selector': 'app-defectos-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormatoAuditoriaComponent', 'selector': 'app-formato-auditoria'},{'name': 'GraficasComponent', 'selector': 'app-graficas'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemsComponent', 'selector': 'app-items'},{'name': 'ItemsDefectsGraphicsComponent', 'selector': 'app-items-defects-graphics'},{'name': 'ItemsFormComponent', 'selector': 'app-items-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NoDataComponent', 'selector': 'app-no-data'},{'name': 'NoPageComponent', 'selector': 'app-no-page'},{'name': 'OrderItemsGraphicsComponent', 'selector': 'app-order-items-graphics'},{'name': 'PedidosComponent', 'selector': 'app-pedidos'},{'name': 'PedidosFormComponent', 'selector': 'app-pedidos-form'},{'name': 'ProcesosFormComponent', 'selector': 'app-procesos-form'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TablasComponent', 'selector': 'app-tablas'},{'name': 'TecnologiasComponent', 'selector': 'app-tecnologias'},{'name': 'TecnologiasFormComponent', 'selector': 'app-tecnologias-form'},{'name': 'UserGraphicsComponent', 'selector': 'app-user-graphics'},{'name': 'UserTimeComponent', 'selector': 'app-user-time'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosFormComponent', 'selector': 'app-usuarios-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1131 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SearchComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/search/search.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de la barra de búsqueda</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-search</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>NgIconComponent</code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./search.component.html</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">viewProviders</td>
+                <td class="col-md-9">
+                    <code>
+                            <code>provideIcons({ bootstrapSearch })</code>
+                    </code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./search.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#info" >info</a>
+                            </li>
+                            <li>
+                                <a href="#query" >query</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#get" >get</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchBy" >searchBy</a>
+                            </li>
+                            <li>
+                                <a href="#searchOI" >searchOI</a>
+                            </li>
+                            <li>
+                                <a href="#searchPD" >searchPD</a>
+                            </li>
+                            <li>
+                                <a href="#searchUnionTables" >searchUnionTables</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#length" >length</a>
+                            </li>
+                            <li>
+                                <a href="#listLength" >listLength</a>
+                            </li>
+                            <li>
+                                <a href="#table" >table</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#all" >all</a>
+                            </li>
+                            <li>
+                                <a href="#changeData" >changeData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(search: <a href="../injectables/SearchService.html" target="_self">SearchService</a>, processService: <a href="../injectables/AuditoriaDelProcesoService.html" target="_self">AuditoriaDelProcesoService</a>, ordersService: <a href="../injectables/PedidosService.html" target="_self">PedidosService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/search/search.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>search</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de búsqueda</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>processService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuditoriaDelProcesoService.html" target="_self" >AuditoriaDelProcesoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de <code>auditoria_del_proceso</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>ordersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PedidosService.html" target="_self" >PedidosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de <code>pedidos</code></p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="length"></a>
+                        <b>length</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/search/search.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listLength"></a>
+                        <b>listLength</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/search/search.component.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="table"></a>
+                        <b>table</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/search/search.component.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="all"></a>
+                        <b>all</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/search/search.component.ts:39</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeData"></a>
+                        <b>changeData</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/search/search.component.ts:38</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="get"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>get</b></span>
+                        <a href="#get"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>get()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/components/search/search.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Emite el evento <code>all</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchBy"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchBy</b></span>
+                        <a href="#searchBy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchBy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/components/search/search.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que activa la búsqueda de registros. Si el texto a buscar esta vacío, activa el evento <code>all</code>
+para mostrar todos los registros, en caso contrario activa el método <code>search</code> del servicio <code>search</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna para no seguir con la función se se cumplen ciertos criterios.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchOI"></a>
+                    <span class="name">
+                        <span ><b>searchOI</b></span>
+                        <a href="#searchOI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchOI()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/app/components/search/search.component.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Busca en <code>pedido_item</code> los registros que coincidan con el texto a buscar.
+Si no existen registros que cumplan con el parámetro retorna la ativación del evento <code>all</code>.
+Si existen registros agrega a <code>info</code> aquellos que no esten repetidos en base a la propiedad
+<code>codigoPedido</code> si hay registros en <code>info</code> activa el evento <code>changeData</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchPD"></a>
+                    <span class="name">
+                        <span ><b>searchPD</b></span>
+                        <a href="#searchPD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchPD()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/components/search/search.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Busca en <code>proceso_defecto</code> los registros que coincidan con el texto a buscar.
+Si no existen registros que cumplan con el parámetro retorna la ativación del evento <code>all</code>.
+Si existen registros agrega a <code>info</code> aquellos que no esten repetidos en base a la propiedad
+<code>IDproceso</code> si hay registros en <code>info</code> activa el evento <code>changeData</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchUnionTables"></a>
+                    <span class="name">
+                        <span ><b>searchUnionTables</b></span>
+                        <a href="#searchUnionTables"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchUnionTables(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/components/search/search.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Busca en la tabla unión de la tabla a buscar, activando los métodos correspondientes.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="info"></a>
+                    <span class="name">
+                        <span ><b>info</b></span>
+                        <a href="#info"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/search/search.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="query"></a>
+                    <span class="name">
+                        <span ><b>query</b></span>
+                        <a href="#query"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/search/search.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, Output } from &#x27;@angular/core&#x27;;
+import { SearchService } from &#x27;../../services/search.service&#x27;;
+import { provideIcons, NgIconComponent } from &#x27;@ng-icons/core&#x27;;
+import { bootstrapSearch } from &quot;@ng-icons/bootstrap-icons&quot;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { AuditoriaDelProcesoService } from &#x27;../../services/auditoria-del-proceso.service&#x27;;
+import { PedidosService } from &#x27;../../services/pedidos.service&#x27;;
+
+/**
+ * Componente de la barra de búsqueda
+ */
+@Component({
+  selector: &#x27;app-search&#x27;,
+  standalone: true,
+  imports: [NgIconComponent, FormsModule],
+  viewProviders: [provideIcons({bootstrapSearch})],
+  templateUrl: &#x27;./search.component.html&#x27;,
+  styleUrl: &#x27;./search.component.css&#x27;
+})
+export class SearchComponent {
+
+  /**
+   * @constructor
+   * @param {SearchService} search Servicio de búsqueda
+   * @param {AuditoriaDelProcesoService} processService Servicio de &#x60;auditoria_del_proceso&#x60;
+   * @param {PedidosService} ordersService Servicio de &#x60;pedidos&#x60;
+   */
+  constructor(
+    private search: SearchService,
+    private processService: AuditoriaDelProcesoService,
+    private ordersService: PedidosService
+  ) {}
+
+  @Input() listLength: number &#x3D; 0; // Número de elementos de la tabla original
+  @Input() length: number &#x3D; 0; // Número de elemtos de la tabla modificada (filtrada por la búsqueda)
+  @Input() table: string &#x3D; &quot;&quot;; // Nombre de la tabla a buscar
+  
+  @Output() changeData &#x3D; new EventEmitter&lt;any&gt;; // Evento para modificar la información mostrada
+  @Output() all &#x3D; new EventEmitter&lt;void&gt;; // Evento para activar el método &#x60;getAll&#x60; del comonente padre
+
+  query: string &#x3D; &quot;&quot;; // Texto a buscar
+  info: any; // Resultados de la b►3squeda
+
+  /**
+   * Emite el evento &#x60;all&#x60; 
+   * @method
+   */
+  public get(): void {
+    this.all.emit();
+  }
+
+  /**
+   * Método que activa la búsqueda de registros. Si el texto a buscar esta vacío, activa el evento &#x60;all&#x60;
+   * para mostrar todos los registros, en caso contrario activa el método &#x60;search&#x60; del servicio &#x60;search&#x60;
+   * @method
+   * @returns {void} Retorna para no seguir con la función se se cumplen ciertos criterios.
+   */
+  public searchBy(): void {
+    // Si &#x60;query&#x60; esta vacio activa el evento &#x60;all&#x60; y regresa.
+    if(this.query &#x3D;&#x3D;&#x3D; &quot;&quot;) {
+      if(this.length &#x3D;&#x3D;&#x3D; this.listLength) return;
+      this.all.emit()
+      return;
+    }
+    // Si &#x60;query&#x60; no esta vacío busca en la tabla especificada el texto proporcionado
+    this.search.search(this.table, this.query).subscribe({
+      next: (data) &#x3D;&gt; {
+        // Si es éxitoso, pero no hay resultados y las tablas no son &#x60;auditoria_del_proceso&#x60; y &#x60;pedidos&#x60; retorna
+        if(data.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp; this.table !&#x3D;&#x3D; &quot;auditoria-proceso&quot; &amp;&amp; this.table !&#x3D;&#x3D; &quot;pedidos&quot;) return;
+        // Si es éxitoso y hay resultados, asigna el valor a &#x60;info&#x60;. (También se realiza si en las tablas anteriores no hay resultados)
+        this.info &#x3D; data;
+        // Llama al método &#x60;searchUnionTables&#x60;
+        this.searchUnionTables(data);
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Busca en la tabla unión de la tabla a buscar, activando los métodos correspondientes.
+   * @method
+   * @param {any} data 
+   */
+  searchUnionTables(data: any): void {
+    // Si &#x60;data&#x60; esta vacía convierte a &#x60;info&#x60; en un array vacío
+    if(data.length &#x3D;&#x3D;&#x3D; 0) this.info &#x3D; [];
+
+    // Ejecuta una método dependiendo del caso
+    switch(true) {
+      case this.table &#x3D;&#x3D;&#x3D; &quot;auditoria-proceso&quot;:
+        this.searchPD();
+        break;
+      case this.table &#x3D;&#x3D;&#x3D; &quot;pedidos&quot;:
+        this.searchOI();
+        break;
+      default:
+        this.changeData.emit(this.info);
+        break;
+    }
+  }
+
+  /**
+   * Busca en &#x60;proceso_defecto&#x60; los registros que coincidan con el texto a buscar.
+   * Si no existen registros que cumplan con el parámetro retorna la ativación del evento &#x60;all&#x60;.
+   * Si existen registros agrega a &#x60;info&#x60; aquellos que no esten repetidos en base a la propiedad
+   * &#x60;IDproceso&#x60; si hay registros en &#x60;info&#x60; activa el evento &#x60;changeData&#x60;
+   * @method
+   */
+  searchPD(): void {
+    // Busca en la tabla &#x60;proceso_defecto&#x60; (lo siguente es como viene en la ruta)
+    this.search.search(&quot;procesos-defectos&quot;, this.query).subscribe({
+      next: (list) &#x3D;&gt; {
+        // Si es éxitoso...
+        // Pero esta vacío la respusta, activa el evento &#x60;changeData&#x60;
+        if(list.length &#x3D;&#x3D;&#x3D; 0) return this.changeData.emit(this.info);
+        // Si no esta vacío, itera en todos los elementos de la respuesta y busca un registro de &#x60;auditoria_del_proceso&#x60; en base a &#x60;IDproceso&#x60;
+        for(let i &#x3D; 0; i &lt; list.length; i++) {
+          this.processService.getOneProcess(list[i].IDproceso).subscribe({
+            // Si es éxitosa, agrega los elemntos con &#x60;IDproceso&#x60; diferente a &#x60;info&#x60;
+            next: (results) &#x3D;&gt; {
+              if(!this.info.some((obj: any) &#x3D;&gt; obj.IDproceso &#x3D;&#x3D;&#x3D; results.IDproceso )) {
+                this.info.push(results)
+              }
+              // Si es la última iteración e &#x60;info&#x60; sigue vacío regresa, sino activa el evento &#x60;changeData&#x60;
+              if(i &#x3D;&#x3D;&#x3D; list.length - 1) {
+                if(this.info.length &#x3D;&#x3D;&#x3D; 0) return;
+                this.changeData.emit(this.info)
+              }
+            },
+            // Si falla imprime el error en consola
+            error: (e) &#x3D;&gt; console.error(e)
+          })
+        }
+      },
+      // Si falla imprime el error en consola
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Busca en &#x60;pedido_item&#x60; los registros que coincidan con el texto a buscar.
+   * Si no existen registros que cumplan con el parámetro retorna la ativación del evento &#x60;all&#x60;.
+   * Si existen registros agrega a &#x60;info&#x60; aquellos que no esten repetidos en base a la propiedad
+   * &#x60;codigoPedido&#x60; si hay registros en &#x60;info&#x60; activa el evento &#x60;changeData&#x60;
+   * @method
+   */
+  searchOI(): void {
+    // Busca en la tabla &#x60;pedido_item&#x60; (lo siguente es como viene en la ruta)
+    this.search.search(&quot;pedidos-items&quot;, this.query).subscribe({
+      // Si es éxitoso...
+      next: (list) &#x3D;&gt; {
+        // Pero la respuesta esta vacía retorna la activación del evento &#x60;changeData&#x60;
+        if(list.length &#x3D;&#x3D;&#x3D; 0) return this.changeData.emit(this.info);
+        // Si no esta vacío itera sobre caada elemento de la respuesta y busca un elemento de &#x60;pedidos&#x60; en base a &#x60;codigoPedido&#x60;
+        for(let i &#x3D; 0; i &lt; list.length; i++) {
+          this.ordersService.getOneOrder(list[i].codigoPedido).subscribe({
+            // Si es éxitosa agrega a &#x60;info&#x60; los elementos de &#x60;pedidos&#x60; que contengan un &#x60;codigoPedido&#x60; diferente a los existentes
+            next: (results) &#x3D;&gt; {
+              if(!this.info.some((obj: any) &#x3D;&gt; obj.codigoPedido &#x3D;&#x3D;&#x3D; results.codigoPedido )) {
+                this.info.push(results)
+              }
+              // Si es la última iteración e &#x60;info&#x60; esta vacío regresa, sino activa el evento &#x60;changeData&#x60;
+              if(i &#x3D;&#x3D;&#x3D; list.length - 1) {
+                if(this.info.length &#x3D;&#x3D;&#x3D; 0) return;
+                this.changeData.emit(this.info)
+              }
+            },
+            // Si falla imprime el error en consola
+            error: (e) &#x3D;&gt; console.error(e)
+          })
+        }
+      },
+      // Si falla imrime el error en consola
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;search-container&quot;&gt;
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;get-all-button&quot;(click)&#x3D;&quot;get()&quot; [disabled]&#x3D;&quot;listLength &#x3D;&#x3D;&#x3D; length&quot;&gt;Todos&lt;/button&gt;
+    &lt;input class&#x3D;&quot;search&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;search&quot; id&#x3D;&quot;search&quot; placeholder&#x3D;&quot;Buscar...&quot; [(ngModel)]&#x3D;&quot;query&quot; (keyup.enter)&#x3D;&quot;searchBy()&quot;&gt;
+    &lt;ng-icon class&#x3D;&quot;icon-search&quot; name&#x3D;&quot;bootstrapSearch&quot; (click)&#x3D;&quot;searchBy()&quot;&gt;&lt;/ng-icon&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="search-container">    <button type="submit" class="get-all-button"(click)="get()" [disabled]="listLength === length">Todos</button>    <input class="search" type="text" name="search" id="search" placeholder="Buscar..." [(ngModel)]="query" (keyup.enter)="searchBy()">    <ng-icon class="icon-search" name="bootstrapSearch" (click)="searchBy()"></ng-icon></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AqlDefectosMayoresComponent', 'selector': 'aql'},{'name': 'AqlFormComponent', 'selector': 'app-aql-form'},{'name': 'AqlGraphicsComponent', 'selector': 'app-aql-graphics'},{'name': 'AuditoriaDelProcesoComponent', 'selector': 'app-proceso'},{'name': 'AuditoriaFormComponent', 'selector': 'app-auditoria-form'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClientesFormComponent', 'selector': 'app-clientes-form'},{'name': 'CustomersGraphicsComponent', 'selector': 'app-customers-graphics'},{'name': 'DefectGraphicsComponent', 'selector': 'app-defect-graphics'},{'name': 'DefectosComponent', 'selector': 'app-defectos'},{'name': 'DefectosFormComponent', 'selector': 'app-defectos-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormatoAuditoriaComponent', 'selector': 'app-formato-auditoria'},{'name': 'GraficasComponent', 'selector': 'app-graficas'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemsComponent', 'selector': 'app-items'},{'name': 'ItemsDefectsGraphicsComponent', 'selector': 'app-items-defects-graphics'},{'name': 'ItemsFormComponent', 'selector': 'app-items-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NoDataComponent', 'selector': 'app-no-data'},{'name': 'NoPageComponent', 'selector': 'app-no-page'},{'name': 'OrderItemsGraphicsComponent', 'selector': 'app-order-items-graphics'},{'name': 'PedidosComponent', 'selector': 'app-pedidos'},{'name': 'PedidosFormComponent', 'selector': 'app-pedidos-form'},{'name': 'ProcesosFormComponent', 'selector': 'app-procesos-form'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TablasComponent', 'selector': 'app-tablas'},{'name': 'TecnologiasComponent', 'selector': 'app-tecnologias'},{'name': 'TecnologiasFormComponent', 'selector': 'app-tecnologias-form'},{'name': 'UserGraphicsComponent', 'selector': 'app-user-graphics'},{'name': 'UserTimeComponent', 'selector': 'app-user-time'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosFormComponent', 'selector': 'app-usuarios-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SearchComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

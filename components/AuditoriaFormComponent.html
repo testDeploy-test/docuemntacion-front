@@ -1,0 +1,2584 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AuditoriaFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/forms/auditoria-form/auditoria-form.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente del formulario <code>formato_auditoria</code></p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-auditoria-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                            <code>NgIconComponent</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./auditoria-form.component.html</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">viewProviders</td>
+                <td class="col-md-9">
+                    <code>
+                            <code>provideIcons({ heroXMark })</code>
+                    </code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./auditoria-form.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#aqlList" >aqlList</a>
+                            </li>
+                            <li>
+                                <a href="#auditForm" >auditForm</a>
+                            </li>
+                            <li>
+                                <a href="#duplicated" >duplicated</a>
+                            </li>
+                            <li>
+                                <a href="#hora_fin" >hora_fin</a>
+                            </li>
+                            <li>
+                                <a href="#hora_inicio" >hora_inicio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#itemsList" >itemsList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#oiList" >oiList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#ordersList" >ordersList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#technologiesList" >technologiesList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#usersList" >usersList</a>
+                            </li>
+                            <li>
+                                <a href="#validOrder" >validOrder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addHoraInicio" >addHoraInicio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#close" >close</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAdditionalinformation" >getAdditionalinformation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAql" >getAql</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getItems" >getItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getOI" >getOI</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getOrders" >getOrders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getTechnologies" >getTechnologies</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getUsers" >getUsers</a>
+                            </li>
+                            <li>
+                                <a href="#hasDuplicated" >hasDuplicated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hidden" >hidden</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setTimeFields" >setTimeFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showFormCreate" >showFormCreate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showFormUpdate" >showFormUpdate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                <a href="#validateOrder" >validateOrder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#action" >action</a>
+                            </li>
+                            <li>
+                                <a href="#auditsList" >auditsList</a>
+                            </li>
+                            <li>
+                                <a href="#selectedAudit" >selectedAudit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#enabledTable" >enabledTable</a>
+                            </li>
+                            <li>
+                                <a href="#getAll" >getAll</a>
+                            </li>
+                            <li>
+                                <a href="#hiddenForm" >hiddenForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, auditsService: <a href="../injectables/FormatoAuditoriaService.html" target="_self">FormatoAuditoriaService</a>, oiService: <a href="../injectables/PedidoItemService.html" target="_self">PedidoItemService</a>, userService: <a href="../injectables/UsuariosService.html" target="_self">UsuariosService</a>, aqlService: <a href="../injectables/AqlDefectosMayoresService.html" target="_self">AqlDefectosMayoresService</a>, technologiesService: <a href="../injectables/TecnologiasService.html" target="_self">TecnologiasService</a>, ordersService: <a href="../injectables/PedidosService.html" target="_self">PedidosService</a>, itemsService: <a href="../injectables/ItemsService.html" target="_self">ItemsService</a>, alertsService: <a href="../injectables/AlertsService.html" target="_self">AlertsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para crear el formulario</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>auditsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FormatoAuditoriaService.html" target="_self" >FormatoAuditoriaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>formato_auditoria</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>oiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PedidoItemService.html" target="_self" >PedidoItemService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>pedido_item</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsuariosService.html" target="_self" >UsuariosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>usuarios</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>aqlService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AqlDefectosMayoresService.html" target="_self" >AqlDefectosMayoresService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>AQL_defectos_mayores</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>technologiesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TecnologiasService.html" target="_self" >TecnologiasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>tecnologias</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>ordersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PedidosService.html" target="_self" >PedidosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>pedidos</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>itemsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ItemsService.html" target="_self" >ItemsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de la tabla <code>items</code></p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>alertsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertsService.html" target="_self" >AlertsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de alertas</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="action"></a>
+                        <b>action</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:50</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="auditsList"></a>
+                        <b>auditsList</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:51</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedAudit"></a>
+                        <b>selectedAudit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:49</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enabledTable"></a>
+                        <b>enabledTable</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:55</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAll"></a>
+                        <b>getAll</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:53</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hiddenForm"></a>
+                        <b>hiddenForm</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:54</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addHoraInicio"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>addHoraInicio</b></span>
+                        <a href="#addHoraInicio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addHoraInicio()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="235"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:235</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener la hora en que se abrió el formulario y asignar este valor a
+<code>hora_inicio</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>close()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="393"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:393</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para cerrar el formulario detectando cambios en la información inicial tanto para la creación
+de un nuevo registro o la actualización de un registro. En caso de detectar cambios pide una confirmación
+antes de cerrar el formulario en caso de confirmar llama al método <code>hidden</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Retorna si se cumplen ciertas condiciones para no ejecutar el resto de la lógica</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="340"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:340</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para crear un nuevo registro de <code>formato_auditoria</code> en base a la información recabada en el formulario.
+Si es éxitosa muestra una alerta de éxito, activa el evento <code>getAll</code> y llama al método <code>hidden</code>
+y si falla muestra el error en la consola y muestra una alerta de error
+el formulario y retorna</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Si el formulario es inválido envia una alerta para que complete
+el formulario y retorna</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAdditionalinformation"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getAdditionalinformation</b></span>
+                        <a href="#getAdditionalinformation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAdditionalinformation()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="203"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:203</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtenr toda la información necesaria para el llenado del formulario.
+Llama a múltiples métodos</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAql"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getAql</b></span>
+                        <a href="#getAql"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAql()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>AQL_defectos_mayores</code>. Si es éxitoso
+asigna los registros a <code>aqlList</code> y si falla muestra el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItems"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getItems</b></span>
+                        <a href="#getItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getItems()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="133"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:133</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>items</code>. Si es éxitoso
+asigna los registros a <code>itemsList</code> y si falla muestra el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOI"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getOI</b></span>
+                        <a href="#getOI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOI()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>pedido_item</code>. Si es éxitoso
+asigna los registros a <code>oiList</code> y si falla muestra el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOrders"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getOrders</b></span>
+                        <a href="#getOrders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOrders()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="189"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:189</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>pedidos</code>. Si es éxitoso
+asigna los registros a <code>ordersList</code> y si falla muestra el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTechnologies"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getTechnologies</b></span>
+                        <a href="#getTechnologies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTechnologies()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>tecnologias</code>. Si es éxitoso
+asigna los registros a <code>technologiesList</code> y si falla muestra el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getUsers</b></span>
+                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUsers()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="175"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:175</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener todos los registros de <code>usuarios</code>. Si es éxitoso
+asigna los registros a <code>usersList</code> y si falla muestra el error en la consola</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasDuplicated"></a>
+                    <span class="name">
+                        <span ><b>hasDuplicated</b></span>
+                        <a href="#hasDuplicated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasDuplicated(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para checar si hay registros duplicados de <code>codigoItem</code> en base a <code>codigoPedido</code>. En caso de haber un duplicado
+establece <code>duplicated</code> como true.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Input del campo <code>codigoItem</code></p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Regresa si al actualizar un registro y el valor de <code>codigoItem</code> es el mismo</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hidden"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>hidden</b></span>
+                        <a href="#hidden"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hidden()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="466"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:466</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para ocultar el formulario y habilitar los botones de las acciónes en el componente padre
+emitiendo los eventos <code>hiddenForm</code> y <code>enabledTable</code></p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Al inicializar el componente muestra el formulario según la acción especificada en el componente padre y
+obten la información necesaria para llenar el formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTimeFields"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>setTimeFields</b></span>
+                        <a href="#setTimeFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setTimeFields()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="250"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:250</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para establecer los campos <code>hora_inicio</code>, <code>hora_fin</code>
+y <code>fecha_auditoria</code> en el formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showFormCreate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>showFormCreate</b></span>
+                        <a href="#showFormCreate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showFormCreate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="289"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:289</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que vacía los campos del formulariocuando se visualiza para crear un nuevo registro</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showFormUpdate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>showFormUpdate</b></span>
+                        <a href="#showFormUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showFormUpdate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="313"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:313</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para establecer el valor del registro a actualizar en los campos correspondientes del formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="367"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:367</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para actualizar un registro de <code>formato_auditoria</code> en base a <code>IDauditoria</code> del registro seleccionado
+y en la nueva información proporcionada en el formulario.
+Pide confirmación de la acción. En caso de confirmar y que la acción sea éxitosa muestra una alerta de éxito,
+emite el evento <code>getAll</code> y llamada al método <code>hidden</code> y si falla muestra el error en la consola y lanza
+una alerta de error</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateOrder"></a>
+                    <span class="name">
+                        <span ><b>validateOrder</b></span>
+                        <a href="#validateOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validateOrder(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="277"
+                                    class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:277</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para verificar si el <code>codigoPedido</code> ingresado existe en <code>pedidos</code>.
+Si éxiste establece <code>validOrder</code> como true y si no como false</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aqlList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>aqlList</b></span>
+                        <a href="#aqlList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/AqlDefectosMayoresModel.html" target="_self" >AqlDefectosMayoresModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auditForm"></a>
+                    <span class="name">
+                        <span ><b>auditForm</b></span>
+                        <a href="#auditForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="duplicated"></a>
+                    <span class="name">
+                        <span ><b>duplicated</b></span>
+                        <a href="#duplicated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hora_fin"></a>
+                    <span class="name">
+                        <span ><b>hora_fin</b></span>
+                        <a href="#hora_fin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hora_inicio"></a>
+                    <span class="name">
+                        <span ><b>hora_inicio</b></span>
+                        <a href="#hora_inicio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemsList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>itemsList</b></span>
+                        <a href="#itemsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ItemsModel.html" target="_self" >ItemsModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="oiList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>oiList</b></span>
+                        <a href="#oiList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PedidoItemModel.html" target="_self" >PedidoItemModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ordersList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>ordersList</b></span>
+                        <a href="#ordersList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PedidosModel.html" target="_self" >PedidosModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="technologiesList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>technologiesList</b></span>
+                        <a href="#technologiesList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/TecnologiasModel.html" target="_self" >TecnologiasModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usersList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>usersList</b></span>
+                        <a href="#usersList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/UsuariosModel.html" target="_self" >UsuariosModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validOrder"></a>
+                    <span class="name">
+                        <span ><b>validOrder</b></span>
+                        <a href="#validOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/components/forms/auditoria-form/auditoria-form.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from &#x27;@angular/core&#x27;;
+import { FormatoAuditoriaService } from &#x27;../../../services/formato-auditoria.service&#x27;;
+import { AlertsService } from &#x27;../../../services/alerts.service&#x27;;
+import { AqlDefectosMayoresModel } from &#x27;../../../models/aql-defectos-mayores.model&#x27;;
+import { AqlDefectosMayoresService } from &#x27;../../../services/aql-defectos-mayores.service&#x27;;
+import { UsuariosModel } from &#x27;../../../models/usuarios.model&#x27;;
+import { UsuariosService } from &#x27;../../../services/usuarios.service&#x27;;
+import { PedidoItemModel } from &#x27;../../../models/pedido-item.model&#x27;;
+import { PedidoItemService } from &#x27;../../../services/pedido-item.service&#x27;;
+import { TecnologiasModel } from &#x27;../../../models/tecnologias.model&#x27;;
+import { TecnologiasService } from &#x27;../../../services/tecnologias.service&#x27;;
+import { ItemsModel } from &#x27;../../../models/items.model&#x27;;
+import { ItemsService } from &#x27;../../../services/items.service&#x27;;
+import { PedidosModel } from &#x27;../../../models/pedidos.model&#x27;;
+import { PedidosService } from &#x27;../../../services/pedidos.service&#x27;;
+import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { provideIcons, NgIconComponent } from &#x27;@ng-icons/core&#x27;;
+import { heroXMark } from &#x27;@ng-icons/heroicons/outline&#x27;;
+
+/**
+ * Componente del formulario &#x60;formato_auditoria&#x60;
+ * @implements {OnInit}
+ */
+@Component({
+  selector: &#x27;app-auditoria-form&#x27;,
+  standalone: true,
+  imports: [ReactiveFormsModule, NgIconComponent],
+  viewProviders: [provideIcons({heroXMark})],
+  templateUrl: &#x27;./auditoria-form.component.html&#x27;,
+  styleUrl: &#x27;./auditoria-form.component.css&#x27;
+})
+export class AuditoriaFormComponent implements OnInit {
+
+  /**
+   * Al inicializar el componente muestra el formulario según la acción especificada en el componente padre y
+   * obten la información necesaria para llenar el formulario
+   * @method
+   */
+  ngOnInit(): void {
+    if(this.action &#x3D;&#x3D; &quot;update&quot;) {
+      this.showFormUpdate();
+    } else {
+      this.showFormCreate();
+    }
+    this.getAdditionalinformation()
+  }
+
+  @Input() selectedAudit: any; // Recibe la información del registro a actualizar
+  @Input() action: any; // Recibe la acción del formulario
+  @Input() auditsList: any; // Recibe la lista de registros de la tabla &#x60;formato_auditoria&#x60;
+
+  @Output() getAll &#x3D; new EventEmitter&lt;void&gt; // Evento para activar el método &#x60;getAll&#x60; del padre
+  @Output() hiddenForm &#x3D; new EventEmitter&lt;boolean&gt; // Evento para cambiar la visibilidad del formulario en el padre
+  @Output() enabledTable &#x3D; new EventEmitter&lt;void&gt; // Evento para activar el método &#x60;enabled&#x60; del padre
+
+  public oiList?: PedidoItemModel[]; // Declara la lista de registros de &#x60;pedido_item&#x60;
+  public usersList?: UsuariosModel[]; // Declara la lista de registros de &#x60;usuarios&#x60;
+  public aqlList?: AqlDefectosMayoresModel[]; // Declara la lista de registros de &#x60;AQL_defectos_mayores&#x60;
+  public technologiesList?: TecnologiasModel[]; //Ddeclara la lista de registros de &#x60;tecnologias&#x60;
+  public ordersList?: PedidosModel[]; // Declara la lista de registros de &#x60;pedidos&#x60;
+  public itemsList?: ItemsModel[]; // Declara la lista de registros de &#x60;items&#x60;
+
+  auditForm: FormGroup; //Declara el formulario
+
+  hora_inicio: string &#x3D; &quot;&quot;; // Declara la hora en que se comenzó a realizar el formulario
+  hora_fin: string &#x3D; &quot;&quot;; // Declara la hora en que se envio el formulario
+
+  duplicated: boolean &#x3D; false; // Para verificar si hay registros duplicados
+  validOrder: boolean &#x3D; true; // Para verificar si el pedido existe
+
+  /**
+   * @constructor
+   * @param {FormBuilder} fb Servicio para crear el formulario
+   * @param {FormatoAuditoriaService} auditsService Servicio de la tabla &#x60;formato_auditoria&#x60;
+   * @param {PedidoItemService} oiService Servicio de la tabla &#x60;pedido_item&#x60;
+   * @param {UsuariosService} userService Servicio de la tabla &#x60;usuarios&#x60;
+   * @param {AqlDefectosMayoresService} aqlService Servicio de la tabla &#x60;AQL_defectos_mayores&#x60;
+   * @param {TecnologiasService} technologiesService Servicio de la tabla &#x60;tecnologias&#x60;
+   * @param {PedidosService} ordersService Servicio de la tabla &#x60;pedidos&#x60;
+   * @param {ItemsService} itemsService Servicio de la tabla &#x60;items&#x60;
+   * @param {AlertsService} alertsService Servicio de alertas
+   */
+  constructor (
+    private fb: FormBuilder,
+    private auditsService: FormatoAuditoriaService,
+    private oiService: PedidoItemService,
+    private userService: UsuariosService,
+    private aqlService: AqlDefectosMayoresService,
+    private technologiesService: TecnologiasService,
+    private ordersService: PedidosService,
+    private itemsService: ItemsService,
+    private alertsService: AlertsService,
+  ) {
+    // Define los campos del formulario
+    this.auditForm &#x3D; this.fb.group({
+      PO: [&quot;&quot;, Validators.required],
+      codigoPedido: [&quot;&quot;, Validators.required],
+      codigoItem: [&quot;&quot;, Validators.required],
+      fecha_auditoria: [&quot;&quot;, Validators.required],
+      hora_inicio: [&quot;&quot;, Validators.required],
+      hora_fin: [&quot;&quot;, Validators.required],
+      IDusuario: [null, Validators.required],
+      tipo_auditoria: [&quot;&quot;, Validators.required],
+      IDtecnologia: [null, Validators.required],
+      alertas_proceso: [&quot;&quot;],
+      cantidad_lote: [null, Validators.required],
+      tipo_muestra: [&quot;&quot;, Validators.required],
+      IDaql: [null, Validators.required],
+      estado: [&quot;&quot;, Validators.required]
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;pedido_item&#x60;. Si es éxitoso
+   * asigna los registros a &#x60;oiList&#x60; y si falla muestra el error en la consola
+   * @method
+   */
+  public getOI(): void {
+    this.oiService.getAllOI().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.oiList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;items&#x60;. Si es éxitoso
+   * asigna los registros a &#x60;itemsList&#x60; y si falla muestra el error en la consola
+   * @method
+   */
+  public getItems(): void {
+    this.itemsService.getAllitems().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.itemsList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;tecnologias&#x60;. Si es éxitoso
+   * asigna los registros a &#x60;technologiesList&#x60; y si falla muestra el error en la consola
+   * @method
+   */  
+  public getTechnologies(): void {
+    this.technologiesService.getAllTechnologies().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.technologiesList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;AQL_defectos_mayores&#x60;. Si es éxitoso
+   * asigna los registros a &#x60;aqlList&#x60; y si falla muestra el error en la consola
+   * @method
+   */  
+  public getAql(): void {
+    this.aqlService.getAllAql().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.aqlList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;usuarios&#x60;. Si es éxitoso
+   * asigna los registros a &#x60;usersList&#x60; y si falla muestra el error en la consola
+   * @method
+   */  
+  public getUsers(): void {
+    this.userService.getAllUsers().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.usersList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtener todos los registros de &#x60;pedidos&#x60;. Si es éxitoso
+   * asigna los registros a &#x60;ordersList&#x60; y si falla muestra el error en la consola
+   * @method
+   */  
+  public getOrders(): void {
+    this.ordersService.getAllOrders().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.ordersList &#x3D; data;
+      },
+      error: (e) &#x3D;&gt; console.error(e)
+    })
+  }
+
+  /**
+   * Método para obtenr toda la información necesaria para el llenado del formulario.
+   * Llama a múltiples métodos
+   * @method
+   */
+  public getAdditionalinformation(): void {
+    this.getUsers()
+    this.getTechnologies()
+    this.getAql()
+    this.getOI()
+    this.getOrders()
+    this.getItems()
+  }
+
+  /**
+   * Método para checar si hay registros duplicados de &#x60;codigoItem&#x60; en base a &#x60;codigoPedido&#x60;. En caso de haber un duplicado
+   * establece &#x60;duplicated&#x60; como true.
+   * @param {any} event Input del campo &#x60;codigoItem&#x60;
+   * @returns {void} Regresa si al actualizar un registro y el valor de &#x60;codigoItem&#x60; es el mismo
+   */
+  hasDuplicated(event: any): void {
+    this.duplicated &#x3D; false;
+    if(event !&#x3D; null) {
+      for(let i &#x3D; 0; i &lt; this.auditsList.length; i++) {
+        if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot; &amp;&amp; this.selectedAudit.IDauditoria &#x3D;&#x3D;&#x3D; this.auditsList[i].IDauditoria &amp;&amp; event.target.value &#x3D;&#x3D;&#x3D; this.auditsList[i].codigoItem) return;
+        if(event.target.value &#x3D;&#x3D;&#x3D; this.auditsList[i].codigoItem &amp;&amp; this.auditForm.get(&quot;codigoPedido&quot;)?.value &#x3D;&#x3D;&#x3D; this.auditsList[i].codigoPedido) {
+          this.duplicated &#x3D; true;
+        }
+      }
+    }
+  }
+
+  /**
+   * Método para obtener la hora en que se abrió el formulario y asignar este valor a 
+   * &#x60;hora_inicio&#x60;
+   * @method
+   */
+  public addHoraInicio(): void {
+    const fullDate &#x3D; new Date();
+
+    const hours &#x3D; (fullDate.getHours()).toString().padStart(2,&quot;0&quot;);
+    const minutes &#x3D; (fullDate.getMinutes()).toString().padStart(2,&quot;0&quot;);
+    const seconds &#x3D; (fullDate.getSeconds()).toString().padStart(2, &quot;0&quot;);
+
+    this.hora_inicio &#x3D; &#x60;${hours}:${minutes}:${seconds}&#x60;;
+  }
+
+  /**
+   * Método para establecer los campos &#x60;hora_inicio&#x60;, &#x60;hora_fin&#x60;
+   * y &#x60;fecha_auditoria&#x60; en el formulario
+   * @method
+   */
+  public setTimeFields(): void {
+    const fullDate &#x3D; new Date();
+
+    const hours &#x3D; (fullDate.getHours()).toString().padStart(2,&quot;0&quot;);
+    const minutes &#x3D; (fullDate.getMinutes()).toString().padStart(2,&quot;0&quot;);
+    const seconds &#x3D; (fullDate.getSeconds()).toString().padStart(2, &quot;0&quot;);
+
+    const year &#x3D; fullDate.getFullYear();
+    const month &#x3D; (fullDate.getMonth() + 1).toString().padStart(2, &quot;0&quot;);
+    const day &#x3D; (fullDate.getDate()).toString().padStart(2, &quot;0&quot;);
+
+    this.hora_fin &#x3D; &#x60;${hours}:${minutes}:${seconds}&#x60;;
+    const date &#x3D; &#x60;${year}-${month}-${day}&#x60;;
+
+
+    this.auditForm.patchValue({
+      hora_inicio: this.hora_inicio,
+      hora_fin: this.hora_fin,
+      fecha_auditoria: date
+    })
+  }
+
+  /**
+   * Método para verificar si el &#x60;codigoPedido&#x60; ingresado existe en &#x60;pedidos&#x60;.
+   * Si éxiste establece &#x60;validOrder&#x60; como true y si no como false
+   * @method
+   */
+  validateOrder(event: any): void {
+    const value &#x3D; event.target.value;
+    this.validOrder &#x3D; true;
+    if(!this.ordersList?.some((order: any) &#x3D;&gt; order.codigoPedido &#x3D;&#x3D;&#x3D; value)) {
+      this.validOrder &#x3D; false;
+    }
+  }
+
+  /**
+   * Método que vacía los campos del formulariocuando se visualiza para crear un nuevo registro
+   * @method
+   */
+  public showFormCreate(): void {
+    this.addHoraInicio();
+    this.auditForm.setValue({
+      PO: null,
+      codigoPedido: null,
+      codigoItem: null,
+      fecha_auditoria: null,
+      hora_inicio: null,
+      hora_fin: null,
+      IDusuario: null,
+      tipo_auditoria: null,
+      IDtecnologia: null,
+      alertas_proceso: null,
+      cantidad_lote: null,
+      tipo_muestra: null,
+      IDaql: null,
+      estado: null
+    })
+  }
+
+  /**
+   * Método para establecer el valor del registro a actualizar en los campos correspondientes del formulario
+   * @method
+   */
+  public showFormUpdate(): void {
+    this.auditForm.setValue({
+      PO: this.selectedAudit.PO,
+      codigoPedido: this.selectedAudit.codigoPedido,
+      codigoItem: this.selectedAudit.codigoItem,
+      fecha_auditoria: this.selectedAudit.fecha_auditoria,
+      hora_inicio: this.selectedAudit.hora_inicio,
+      hora_fin: this.selectedAudit.hora_fin,
+      IDusuario: this.selectedAudit.usuario.IDusuario,
+      tipo_auditoria: this.selectedAudit.tipo_auditoria,
+      IDtecnologia: this.selectedAudit.tecnologia.IDtecnologia,
+      alertas_proceso: this.selectedAudit.alertas_proceso,
+      cantidad_lote: this.selectedAudit.cantidad_lote,
+      tipo_muestra: this.selectedAudit.tipo_muestra,
+      IDaql: this.selectedAudit.aql.IDaql,
+      estado: this.selectedAudit.estado
+    })
+  }
+
+  /**
+   * Método para crear un nuevo registro de &#x60;formato_auditoria&#x60; en base a la información recabada en el formulario.
+   * Si es éxitosa muestra una alerta de éxito, activa el evento &#x60;getAll&#x60; y llama al método &#x60;hidden&#x60;
+   * y si falla muestra el error en la consola y muestra una alerta de error 
+   * @method
+   * @returns {void} Si el formulario es inválido envia una alerta para que complete
+   * el formulario y retorna
+   */
+  public create(): void {
+    this.setTimeFields();
+    if(this.auditForm.invalid) {
+      this.alertsService.completeAlert();
+      return;
+    }
+    this.auditsService.createAudit(this.auditForm.value).subscribe({
+      next: () &#x3D;&gt; {
+        this.alertsService.succesAlert(&quot;New audits record created.&quot;);
+        this.getAll.emit();
+        this.hidden();
+      },
+      error: (e) &#x3D;&gt; {
+        console.error(e);
+        this.alertsService.errorAlert();
+      }
+    })
+  }
+
+  /**
+   * Método para actualizar un registro de &#x60;formato_auditoria&#x60; en base a &#x60;IDauditoria&#x60; del registro seleccionado
+   * y en la nueva información proporcionada en el formulario.
+   * Pide confirmación de la acción. En caso de confirmar y que la acción sea éxitosa muestra una alerta de éxito,
+   * emite el evento &#x60;getAll&#x60; y llamada al método &#x60;hidden&#x60; y si falla muestra el error en la consola y lanza
+   * una alerta de error
+   * @method
+   */
+  public update(): void {
+    this.alertsService.confirmAlert(&quot;You are about to update a record.&quot;, &quot;update&quot;).then((confirmed) &#x3D;&gt; {
+      if(confirmed) {
+        const IDauditoria &#x3D; this.selectedAudit.IDauditoria;
+        this.auditsService.updateAudit(IDauditoria, this.auditForm.value).subscribe({
+          next: () &#x3D;&gt; {
+            this.alertsService.succesAlert(&#x60;Record ${IDauditoria} updated.&#x60;);
+            this.getAll.emit();
+            this.hidden();
+          },
+          error: (e) &#x3D;&gt; {
+            console.error(e);
+            this.alertsService.errorAlert();
+          }
+        })
+      }
+    })
+  }
+
+  /**
+   * Método para cerrar el formulario detectando cambios en la información inicial tanto para la creación
+   * de un nuevo registro o la actualización de un registro. En caso de detectar cambios pide una confirmación 
+   * antes de cerrar el formulario en caso de confirmar llama al método &#x60;hidden&#x60;
+   * @method
+   * @returns Retorna si se cumplen ciertas condiciones para no ejecutar el resto de la lógica
+   */
+  public close(): void {
+    // Si la acción es para actualizar un registro..
+    if(this.action &#x3D;&#x3D;&#x3D; &quot;update&quot;) {
+      // Estructura de la información del registro seleccionado
+      const dataPrev &#x3D; this.selectedAudit? {
+        PO: this.selectedAudit.PO,
+        codigoPedido: this.selectedAudit.codigoPedido,
+        codigoItem: this.selectedAudit.codigoItem,
+        fecha_auditoria: this.selectedAudit.fecha_auditoria,
+        hora_inicio: this.selectedAudit.hora_inicio,
+        hora_fin: this.selectedAudit.hora_fin,
+        IDusuario: this.selectedAudit.usuario.IDusuario,
+        tipo_auditoria: this.selectedAudit.tipo_auditoria,
+        IDtecnologia: this.selectedAudit.tecnologia.IDtecnologia,
+        alertas_proceso: this.selectedAudit.alertas_proceso,
+        cantidad_lote: this.selectedAudit.cantidad_lote,
+        tipo_muestra: this.selectedAudit.tipo_muestra,
+        IDaql: this.selectedAudit.aql.IDaql,
+        estado: this.selectedAudit.estado
+      }: null
+
+      // Si los datos previos y actuales son iguales llama al método &#x60;hidden&#x60; y retorna
+      if(JSON.stringify(this.auditForm.value) &#x3D;&#x3D;&#x3D; JSON.stringify(dataPrev)){
+        this.hidden();
+        return;
+      }
+      // Si la información previa y la actual son diferentes pide confirmación para llamar al método &#x60;hidden&#x60;
+      this.alertsService.confirmAlert(&quot;The changes will be lost.&quot;, &quot;close&quot;).then((confirmed) &#x3D;&gt; {
+        if(confirmed) {
+          this.hidden();
+          return;
+        }
+      })
+      return;
+    }
+    // Si la acción es para crear un nuevo registro...
+    // Estructura de la información inicial de un nuevo registro
+    const newData &#x3D; {
+      PO: null,
+      codigoPedido: null,
+      codigoItem: null,
+      fecha_auditoria: null,
+      hora_inicio: null,
+      hora_fin: null,
+      IDusuario: null,
+      tipo_auditoria: null,
+      IDtecnologia: null,
+      alertas_proceso: null,
+      cantidad_lote: null,
+      tipo_muestra: null,
+      IDaql: null,
+      estado: null
+    }
+
+    // Si no hay cambios llama al método &#x60;hidden&#x60; y regresa
+    if(JSON.stringify(this.auditForm.value) &#x3D;&#x3D;&#x3D; JSON.stringify(newData)){
+      this.hidden();
+      return;
+    }
+    // Si hay cambios pide confirmación para llamar al método &#x60;hidden&#x60;
+    this.alertsService.confirmAlert(&quot;The data will be lost.&quot;, &quot;close&quot;).then((confirmed) &#x3D;&gt; {
+      if(confirmed) {
+        this.hidden();
+        return
+      }
+    })
+  }
+
+  /**
+   * Método para ocultar el formulario y habilitar los botones de las acciónes en el componente padre
+   * emitiendo los eventos &#x60;hiddenForm&#x60; y &#x60;enabledTable&#x60;
+   * @method
+   */  
+  public hidden() {
+    this.hiddenForm.emit(false)
+    this.enabledTable.emit()
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;form-container&quot;&gt;
+    &lt;ng-icon class&#x3D;&quot;close-icon&quot; name&#x3D;&quot;heroXMark&quot; (click)&#x3D;&quot;close()&quot;&gt;&lt;/ng-icon&gt;
+    &lt;form [formGroup]&#x3D;&quot;auditForm&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;PO&quot;&gt;PO&lt;/label&gt;
+            &lt;input formControlName&#x3D;&quot;PO&quot; type&#x3D;&quot;text&quot;&gt;
+        &lt;/div&gt;
+        &lt;!--&lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;codigoPedido&quot;&gt;Código pedido&lt;/label&gt;
+            &lt;select formControlName&#x3D;&quot;codigoPedido&quot; name&#x3D;&quot;codigoPedido&quot; id&#x3D;&quot;codigoPedido&quot;&gt;
+                @for(order of ordersList; track order.codigoPedido) {
+                    &lt;option [value]&#x3D;&quot;order.codigoPedido&quot;&gt;{{order.codigoPedido}}&lt;/option&gt;
+                }
+            &lt;/select&gt;
+        &lt;/div&gt;--&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;codigoPedido&quot;&gt;Código pedido&lt;/label&gt;
+            &lt;input formControlName&#x3D;&quot;codigoPedido&quot; type&#x3D;&quot;text&quot; (change)&#x3D;&quot;validateOrder($event)&quot;&gt;
+        &lt;/div&gt;
+        @if(!validOrder) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;
+                &lt;span&gt;Pedido inválido&lt;/span&gt;
+            &lt;/div&gt;
+        }
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;codigoItem&quot;&gt;Código Item&lt;/label&gt;
+            &lt;select formControlName&#x3D;&quot;codigoItem&quot; name&#x3D;&quot;codigoItem&quot; id&#x3D;&quot;codigoItem&quot; (change)&#x3D;&quot;hasDuplicated($event)&quot;&gt;
+                @for(oi of oiList; track oi.IDpedido_item) {
+                    @if(auditForm.get(&quot;codigoPedido&quot;)?.value &#x3D;&#x3D;&#x3D; oi.codigoPedido) {
+                        &lt;option [value]&#x3D;&quot;oi.item.codigoItem&quot;&gt;{{oi.item.codigoItem}}&lt;/option&gt;
+                    }
+                }
+            &lt;/select&gt;
+            @if(duplicated) {
+                &lt;div class&#x3D;&quot;error&quot;&gt;
+                    &lt;span&gt;Item duplicado&lt;/span&gt;
+                &lt;/div&gt;
+            }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;IDusuario&quot;&gt;Auditor&lt;/label&gt;
+            &lt;select formControlName&#x3D;&quot;IDusuario&quot; name&#x3D;&quot;IDusuario&quot; id&#x3D;&quot;IDusuario&quot;&gt;
+                @for(user of usersList; track user.IDusuario) {
+                    &lt;option [value]&#x3D;&quot;user.IDusuario&quot;&gt;{{user.nombre}}&lt;/option&gt;
+                }
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;tipo_auditoria&quot;&gt;Tipo auditoria&lt;/label&gt;
+            &lt;input formControlName&#x3D;&quot;tipo_auditoria&quot; type&#x3D;&quot;text&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;IDtecnologia&quot;&gt;Tecnologia&lt;/label&gt;
+            &lt;select formControlName&#x3D;&quot;IDtecnologia&quot; name&#x3D;&quot;IDtecnologia&quot; id&#x3D;&quot;IDtecnologia&quot;&gt;
+                @for(technology of technologiesList; track technology.IDtecnologia) {
+                    &lt;option [value]&#x3D;&quot;technology.IDtecnologia&quot;&gt;{{technology.nombre}}&lt;/option&gt;
+                }
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;alertas_proceso&quot;&gt;Alertas del proceso&lt;/label&gt;
+            &lt;textarea formControlName&#x3D;&quot;alertas_proceso&quot;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;cantidad_lote&quot;&gt;Cantidad lote&lt;/label&gt;
+            &lt;input formControlName&#x3D;&quot;cantidad_lote&quot; type&#x3D;&quot;number&quot; [min]&#x3D;&quot;2&quot; [max]&#x3D;&quot;999999999999999&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;aql-container&quot;&gt;
+            &lt;div class&#x3D;&quot;tipo&quot;&gt;
+                &lt;label for&#x3D;&quot;tipo_muestra&quot;&gt;Muestra&lt;/label&gt;
+                &lt;select formControlName&#x3D;&quot;tipo_muestra&quot; name&#x3D;&quot;tipo_muestra&quot; id&#x3D;&quot;tipo_muestra&quot;&gt;
+                    &lt;option [value]&#x3D;&quot;&#x27;reducida&#x27;&quot;&gt;Reducida&lt;/option&gt;
+                    &lt;option [value]&#x3D;&quot;&#x27;normal&#x27;&quot;&gt;Normal&lt;/option&gt;
+                    &lt;option [value]&#x3D;&quot;&#x27;severa&#x27;&quot;&gt;Severa&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;aql-quantity&quot;&gt;
+                &lt;label for&#x3D;&quot;IDaql&quot;&gt;AQL&lt;/label&gt;
+                &lt;select formControlName&#x3D;&quot;IDaql&quot; name&#x3D;&quot;IDaql&quot; id&#x3D;&quot;IDaql&quot;&gt;
+                    @for(aql of aqlList; track aql.IDaql) {
+                        @if((auditForm.get(&#x27;cantidad_lote&#x27;)?.value &gt;&#x3D; (aql.minimo ? aql.minimo : 0)) &amp;&amp; (auditForm.get(&#x27;cantidad_lote&#x27;)?.value &lt;&#x3D; (aql.maximo ? aql.maximo : 999999999999999))) {
+                            @if(auditForm.get(&quot;tipo_muestra&quot;)?.value &#x3D;&#x3D;&#x3D; &quot;reducida&quot;) {
+                                &lt;option [value]&#x3D;&quot;aql.IDaql&quot;&gt;{{aql.muestra_inspeccion_reducida}}&lt;/option&gt;
+                            }
+                            @if(auditForm.get(&quot;tipo_muestra&quot;)?.value &#x3D;&#x3D;&#x3D; &quot;normal&quot;) {
+                                &lt;option [value]&#x3D;&quot;aql.IDaql&quot;&gt;{{aql.muestra_inspeccion_normal}}&lt;/option&gt;
+                            }
+                            @if(auditForm.get(&quot;tipo_muestra&quot;)?.value &#x3D;&#x3D;&#x3D; &quot;severa&quot;) {
+                                &lt;option [value]&#x3D;&quot;aql.IDaql&quot;&gt;{{aql.muestra_inspeccion_severa}}&lt;/option&gt;
+                            }
+                        }
+                    }
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;estado&quot;&gt;Estado&lt;/label&gt;
+            &lt;input formControlName&#x3D;&quot;estado&quot; type&#x3D;&quot;text&quot;&gt;
+        &lt;/div&gt;
+        
+        @if(action &#x3D;&#x3D;&#x3D; &quot;create&quot;) {
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;button-form create-button&quot; (click)&#x3D;&quot;create()&quot; [disabled]&#x3D;&quot;duplicated || !validOrder&quot;&gt;Crear&lt;/button&gt;                        
+            &lt;/div&gt;
+        } @else {
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;button-form update-button&quot; (click)&#x3D;&quot;update()&quot; [disabled]&#x3D;&quot;duplicated || !validOrder&quot;&gt;Guardar&lt;/button&gt;                    
+            &lt;/div&gt;
+        }
+        
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="form-container">    <ng-icon class="close-icon" name="heroXMark" (click)="close()"></ng-icon>    <form [formGroup]="auditForm">        <div class="form-group">            <label for="PO">PO</label>            <input formControlName="PO" type="text">        </div>        <!--<div class="form-group">            <label for="codigoPedido">Código pedido</label>            <select formControlName="codigoPedido" name="codigoPedido" id="codigoPedido">                @for(order of ordersList; track order.codigoPedido) {                    <option [value]="order.codigoPedido">{{order.codigoPedido}}</option>                }            </select>        </div>-->        <div class="form-group">            <label for="codigoPedido">Código pedido</label>            <input formControlName="codigoPedido" type="text" (change)="validateOrder($event)">        </div>        @if(!validOrder) {            <div class="error">                <span>Pedido inválido</span>            </div>        }        <div class="form-group">            <label for="codigoItem">Código Item</label>            <select formControlName="codigoItem" name="codigoItem" id="codigoItem" (change)="hasDuplicated($event)">                @for(oi of oiList; track oi.IDpedido_item) {                    @if(auditForm.get("codigoPedido")?.value === oi.codigoPedido) {                        <option [value]="oi.item.codigoItem">{{oi.item.codigoItem}}</option>                    }                }            </select>            @if(duplicated) {                <div class="error">                    <span>Item duplicado</span>                </div>            }        </div>        <div class="form-group">            <label for="IDusuario">Auditor</label>            <select formControlName="IDusuario" name="IDusuario" id="IDusuario">                @for(user of usersList; track user.IDusuario) {                    <option [value]="user.IDusuario">{{user.nombre}}</option>                }            </select>        </div>        <div class="form-group">            <label for="tipo_auditoria">Tipo auditoria</label>            <input formControlName="tipo_auditoria" type="text">        </div>        <div class="form-group">            <label for="IDtecnologia">Tecnologia</label>            <select formControlName="IDtecnologia" name="IDtecnologia" id="IDtecnologia">                @for(technology of technologiesList; track technology.IDtecnologia) {                    <option [value]="technology.IDtecnologia">{{technology.nombre}}</option>                }            </select>        </div>        <div class="form-group">            <label for="alertas_proceso">Alertas del proceso</label>            <textarea formControlName="alertas_proceso"></textarea>        </div>        <div class="form-group">            <label for="cantidad_lote">Cantidad lote</label>            <input formControlName="cantidad_lote" type="number" [min]="2" [max]="999999999999999">        </div>        <div class="aql-container">            <div class="tipo">                <label for="tipo_muestra">Muestra</label>                <select formControlName="tipo_muestra" name="tipo_muestra" id="tipo_muestra">                    <option [value]="\'reducida\'">Reducida</option>                    <option [value]="\'normal\'">Normal</option>                    <option [value]="\'severa\'">Severa</option>                </select>            </div>            <div class="aql-quantity">                <label for="IDaql">AQL</label>                <select formControlName="IDaql" name="IDaql" id="IDaql">                    @for(aql of aqlList; track aql.IDaql) {                        @if((auditForm.get(\'cantidad_lote\')?.value >= (aql.minimo ? aql.minimo : 0)) && (auditForm.get(\'cantidad_lote\')?.value <= (aql.maximo ? aql.maximo : 999999999999999))) {                            @if(auditForm.get("tipo_muestra")?.value === "reducida") {                                <option [value]="aql.IDaql">{{aql.muestra_inspeccion_reducida}}</option>                            }                            @if(auditForm.get("tipo_muestra")?.value === "normal") {                                <option [value]="aql.IDaql">{{aql.muestra_inspeccion_normal}}</option>                            }                            @if(auditForm.get("tipo_muestra")?.value === "severa") {                                <option [value]="aql.IDaql">{{aql.muestra_inspeccion_severa}}</option>                            }                        }                    }                </select>            </div>        </div>        <div class="form-group">            <label for="estado">Estado</label>            <input formControlName="estado" type="text">        </div>                @if(action === "create") {            <div class="form-group">                <button type="submit" class="button-form create-button" (click)="create()" [disabled]="duplicated || !validOrder">Crear</button>                                    </div>        } @else {            <div class="form-group">                <button type="submit" class="button-form update-button" (click)="update()" [disabled]="duplicated || !validOrder">Guardar</button>                                </div>        }            </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AqlDefectosMayoresComponent', 'selector': 'aql'},{'name': 'AqlFormComponent', 'selector': 'app-aql-form'},{'name': 'AqlGraphicsComponent', 'selector': 'app-aql-graphics'},{'name': 'AuditoriaDelProcesoComponent', 'selector': 'app-proceso'},{'name': 'AuditoriaFormComponent', 'selector': 'app-auditoria-form'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClientesFormComponent', 'selector': 'app-clientes-form'},{'name': 'CustomersGraphicsComponent', 'selector': 'app-customers-graphics'},{'name': 'DefectGraphicsComponent', 'selector': 'app-defect-graphics'},{'name': 'DefectosComponent', 'selector': 'app-defectos'},{'name': 'DefectosFormComponent', 'selector': 'app-defectos-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormatoAuditoriaComponent', 'selector': 'app-formato-auditoria'},{'name': 'GraficasComponent', 'selector': 'app-graficas'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemsComponent', 'selector': 'app-items'},{'name': 'ItemsDefectsGraphicsComponent', 'selector': 'app-items-defects-graphics'},{'name': 'ItemsFormComponent', 'selector': 'app-items-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NoDataComponent', 'selector': 'app-no-data'},{'name': 'NoPageComponent', 'selector': 'app-no-page'},{'name': 'OrderItemsGraphicsComponent', 'selector': 'app-order-items-graphics'},{'name': 'PedidosComponent', 'selector': 'app-pedidos'},{'name': 'PedidosFormComponent', 'selector': 'app-pedidos-form'},{'name': 'ProcesosFormComponent', 'selector': 'app-procesos-form'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TablasComponent', 'selector': 'app-tablas'},{'name': 'TecnologiasComponent', 'selector': 'app-tecnologias'},{'name': 'TecnologiasFormComponent', 'selector': 'app-tecnologias-form'},{'name': 'UserGraphicsComponent', 'selector': 'app-user-graphics'},{'name': 'UserTimeComponent', 'selector': 'app-user-time'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosFormComponent', 'selector': 'app-usuarios-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AuditoriaFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuditoriaFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
